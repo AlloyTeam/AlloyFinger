@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>AlloyFinger</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            background-color: #ccc;
+            text-align: center;
+           font: 14px / 1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+        }
+        .header{
+            background-color: #333;
+            height: 40px;
+            color:white;
+            text-align: left;
+            text-indent: 20px;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 40px;
+        }
+        .title{
+            height: 30px;
+            color:#333333;
+            font-size: 20px;
+            line-height: 30px;
+        }
+        .example img{
+            width:160px ;
+        }
+        .imgBox{
+            margin-bottom: 10px;
+            border-bottom: 1px solid #333333;
+        }
+        .swipeBox{
+            height:160px;
+            width: 160px;
+            margin: 0 auto;
+            overflow: hidden;
+            font-size: 0;
+            position: relative;
+            border: 2px solid #ccc;
+            box-sizing: border-box;
+        }
+        .scroll{
+            width: 480px;
+            height: 160px;
+            white-space: nowrap;
+        }
+
+        .nuclear-nav {
+            position: absolute;
+            bottom: 6px;
+            right: 10px;
+        }
+
+        .nuclear-nav a {
+            display: inline-block;
+            background-color: white;
+            cursor: pointer;
+            width: 10px;
+            height: 10px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            margin-right: 5px;
+            border: 1px solid #808080;
+        }
+        
+        .nuclear-nav a.active {
+            background-color: #ffd800;
+        }
+
+        .longTapBox{
+            position: relative;
+            margin: 0 auto;
+            width: 160px;
+            height: 160px;
+            overflow: hidden;
+            -webkit-user-select: none;
+            -webkit-user-drag: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        .longTapBox img{
+            pointer-events: none;
+
+        }
+
+        .overlay2,.overlay{
+            background-color: rgba(70, 70, 70, 0.8);
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 160px;
+            height: 160px;
+
+            display: none;
+        }
+        .overlay2 img, .overlay img{
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 60px;
+            left: 60px;
+        }
+        .pb6{
+            padding-bottom: 6px;
+        }
+
+        .ribbon {
+            top: 3.2em;
+            right: -3.7em;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+            color:#fff;
+            display: block;
+            padding: .6em 3.5em;
+            position: fixed;
+            text-align: center;
+            text-decoration: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-color: green;
+            z-index: 10000;
+        }
+
+        .btn {
+            letter-spacing: 3px;
+            display: inline-block;
+
+            color: white;
+            width: 270px;
+            height: 45px;
+            font-size: 24px;
+            line-height: 45px;
+            background-color: green;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            border-radius: 2px;
+            text-decoration: none;
+
+        }
+
+        .footer{
+            height: 120px;
+        }
+        .linkCanvasBox{
+            margin-top: 10px;
+        }
+       .linkCanvasBox .btn{
+            font-size: 18px;
+
+        }
+    </style>
+</head>
+<body>
+<a href="https://github.com/AlloyTeam/AlloyFinger" class="ribbon">Fork me on Github</a>
+    <div class="header">AlloyFinger</div>
+    <div class="example">
+    <div class="title">pinch</div>
+    <div class="imgBox">
+        <img id="pinchImg" src="asset/test.png" />
+    </div>
+    <div class="title">rotate</div>
+    <div class="imgBox">
+        <img id="rotateImg" src="asset/test.png" />
+    </div>
+    <div class="title">pinch+rotate</div>
+    <div class="imgBox">
+        <img id="pinchRotateImg" src="asset/test.png" />
+    </div>
+    <div class="title">pressMove</div>
+    <div class="imgBox">
+        <img id="pressMoveImg" src="asset/test.png" />
+    </div>
+    <div class="title">doubleTap</div>
+    <div class="imgBox">
+        <img id="doubleTapImg" src="asset/test.png" />
+    </div>
+    <div class="title">swipe</div>
+        <div class="imgBox pb6">
+    <div class="swipeBox">
+        <div class="scroll"  id="swipeScroll">
+            <img  src="asset/test.png" /> <img  src="asset/test2.png" /> <img  src="asset/test3.png" />
+        </div>
+        <div class="nuclear-nav">
+            <a data-index="0" class="active"></a>
+            <a data-index="1" class=" "></a>
+            <a data-index="2" class=" "></a>
+        </div>
+    </div>
+        </div>
+    <div class="title">longTap</div>
+        <div class="imgBox pb6">
+    <div class=" longTapBox" id="longTapBox">
+        <img id="longTapImg" src="asset/test.png" />
+        <div class="overlay" id="overlay">
+            <img src="asset/yes.png"/>
+        </div>
+    </div>
+        </div>
+
+        <div class="title">tap</div>
+        <div class="imgBox pb6">
+            <div class=" longTapBox" id="tapBox">
+                <img  src="asset/test.png" />
+                <div class="overlay2" id="overlay2">
+                    <img src="asset/yes.png"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+       <div> <a class="btn" href="http://dnt.coding.me/demo/alloy_finger/example/picture/">综合例子→</a></div>
+        <div class="linkCanvasBox"> <a class="btn"  href="http://dnt.coding.me/demo/alloy_finger/example/canvas/">Canvas+AlloyFinger→</a></div>
+    </div>
+    <script src="asset/transform.js"></script>
+    <script src="alloy_finger.js"></script>
+    <script src="asset/to.js"></script>
+    <script>
+        var pinchImg = document.getElementById("pinchImg");
+        Transform(pinchImg);
+        var initScale = 1;
+        new AlloyFinger(pinchImg, {
+            multipointStart: function () {
+                initScale = pinchImg.scaleX;
+            },
+            pinch: function (evt) {
+                pinchImg.scaleX = pinchImg.scaleY = initScale * evt.scale;
+            }
+        });
+
+        var rotateImg = document.getElementById("rotateImg");
+        Transform(rotateImg);
+        new AlloyFinger(rotateImg, {
+            rotate:function(evt){
+                rotateImg.rotateZ += evt.angle;
+            }
+        });
+
+        var pinchRotateImg = document.getElementById("pinchRotateImg");
+        Transform(pinchRotateImg);
+        new AlloyFinger(pinchRotateImg, {
+            rotate:function(evt){
+                pinchRotateImg.rotateZ += evt.angle;
+            },
+            multipointStart: function () {
+                initScale = pinchRotateImg.scaleX;
+            },
+            pinch: function (evt) {
+                pinchRotateImg.scaleX = pinchRotateImg.scaleY = initScale * evt.scale;
+            }
+        });
+
+        var pressMoveImg = document.getElementById("pressMoveImg");
+        Transform(pressMoveImg);
+        new AlloyFinger(pressMoveImg, {
+            pressMove:function(evt){
+                pressMoveImg.translateX += evt.deltaX;
+                pressMoveImg.translateY += evt.deltaY;
+            }
+        });
+
+        function ease(x) {
+            return Math.sqrt(1 - Math.pow(x - 1, 2));
+        }
+        var doubleTapImg = document.getElementById("doubleTapImg");
+        Transform(doubleTapImg);
+        new AlloyFinger(doubleTapImg, {
+            doubleTap:function(){
+                if(doubleTapImg.scaleX===1){
+                    new To(doubleTapImg, "scaleX", 2, 500, ease);
+                    new To(doubleTapImg, "scaleY", 2, 500, ease);
+                }else if(doubleTapImg.scaleX===2){
+                    new To(doubleTapImg, "scaleX", 1, 500, ease);
+                    new To(doubleTapImg, "scaleY", 1, 500, ease);
+                }
+
+            }
+        });
+
+        var swipeScroll = document.getElementById("swipeScroll"),
+            currentIndex=0;
+        Transform(swipeScroll);
+        function activeNav(index){
+            var items = document.querySelectorAll(".nuclear-nav a"),
+                    i = 0,
+                    len = items.length;
+            for (; i < len; i++) {
+                if (i === index) {
+                    items[i].classList.add("active");
+                } else {
+                    items[i].classList.remove("active");
+                }
+            }
+        }
+        new AlloyFinger(swipeScroll, {
+            swipe:function(evt){
+                if(evt.direction==="Left"){
+                    if(currentIndex<2) {
+                        currentIndex++;
+                        new To(swipeScroll, "translateX", -160 * currentIndex, 500, ease, function () {
+                            activeNav(currentIndex);
+                        });
+                    }
+                }else if(evt.direction==="Right"){
+                    if(currentIndex>0) {
+                        currentIndex--;
+                        new To(swipeScroll, "translateX", -160 * currentIndex, 500, ease, function () {
+                            activeNav(currentIndex);
+                        });
+                    }
+                }
+            }
+        });
+
+        var longTapBox = document.getElementById("longTapBox");
+        Transform(longTapBox);
+        var overlay=document.getElementById("overlay");
+        new AlloyFinger(longTapBox, {
+            longTap:function(){
+                toggleDom(overlay);
+            }
+        });
+
+        var tapBox = document.getElementById("tapBox");
+        Transform(tapBox);
+        var overlay2=document.getElementById("overlay2");
+        new AlloyFinger(tapBox, {
+            tap:function(){
+                toggleDom(overlay2);
+            },
+            singleTap:function(){
+                console.log("singleTap")
+            },
+            doubleTap:function(){
+                console.log("doubleTap")
+            },
+            pointStart:function(){
+                console.log("pointStart")
+            }
+        });
+
+        function toggleDom(dom){
+            var displayValue=window.getComputedStyle(dom,null)["display"];
+            if(displayValue==="none"){
+                dom.style.display="block";
+            }else{
+                dom.style.display="none";
+            }
+        }
+
+        console.log(11);
+    </script>
+</body>
+</html>
