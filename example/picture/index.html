@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>AlloyFinger</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <style>
+        .ribbon {
+            top: 3.2em;
+            right: -4.7em;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+            color:#fff;
+            display: block;
+            padding: .6em 3.5em;
+            position: fixed;
+            text-align: center;
+            text-decoration: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-color: green;
+            z-index: 10000;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://github.com/AlloyTeam/AlloyFinger" class="ribbon">Fork me on Github</a>
+    <script src="../../asset/transform.js"></script>
+    <script src="../../alloy_finger.js"></script>
+    <script src="../../asset/image_loaded.js"></script>
+    <script src="../../asset/to.js"></script>
+    <div id="imgBox" style="position:fixed;width: 100%;height: 100%;left:0;top:0;
+     background:black;display: none;">
+        <img src="../../asset/cover.jpg" id="testImg" alt="" style="width: 100%;position: absolute; " />
+    </div>
+
+    <script>
+        var topPx;
+        imageLoaded("#testImg",function(w,h){
+            document.querySelector("#imgBox").style.display="block";
+            topPx=window.innerHeight/2-(h*window.innerWidth/w)/2;
+            this.style.top=topPx+"px";
+        });
+
+
+        function ease(x) {
+            return Math.sqrt(1 - Math.pow(x - 1, 2));
+        }
+
+        var el = document.getElementById("testImg");
+        Transform(el);
+        var initScale = 1;
+        new AlloyFinger(el, {
+            multipointStart: function () {
+                To.stopAll();
+                initScale = el.scaleX;
+            },
+            rotate: function (evt) {
+                el.rotateZ += evt.angle;
+            },
+            pinch: function (evt) {
+                el.scaleX = el.scaleY = initScale * evt.scale;
+            },
+            multipointEnd: function () {
+                To.stopAll();
+                if (el.scaleX < 1) {
+
+                    new To(el, "scaleX", 1, 500, ease);
+                    new To(el, "scaleY", 1, 500, ease);
+                }
+                if (el.scaleX > 2) {
+
+                    new To(el, "scaleX", 2, 500, ease);
+                    new To(el, "scaleY", 2, 500, ease);
+                }
+                var rotation = el.rotateZ % 360;
+
+                if (rotation < 0)rotation = 360 + rotation;
+                el.rotateZ=rotation;
+
+                if (rotation > 0 && rotation < 45) {
+                    new To(el, "rotateZ", 0, 500, ease);
+                } else if (rotation >= 315) {
+                    new To(el, "rotateZ", 360, 500, ease);
+                } else if (rotation >= 45 && rotation < 135) {
+                    new To(el, "rotateZ", 90, 500, ease);
+                } else if (rotation >= 135 && rotation < 225) {
+                    new To(el, "rotateZ", 180, 500, ease);
+                } else if (rotation >= 225 && rotation < 315) {
+                    new To(el, "rotateZ", 270, 500, ease);
+                }
+            },
+            pressMove: function (evt) {
+                el.translateX += evt.deltaX;
+                el.translateY += evt.deltaY;
+            },
+            tap: function (evt) {
+                //console.log(el.scaleX + "_" + el.scaleY + "_" + el.rotateZ + "_" + el.translateX + "_" + el.translateY);
+                //console.log("tap");
+            },
+            doubleTap: function (evt) {
+                To.stopAll();
+                if (el.scaleX > 1.5) {
+
+                    new To(el, "scaleX", 1, 500, ease);
+                    new To(el, "scaleY", 1, 500, ease);
+                    new To(el, "translateX", 0, 500, ease);
+                    new To(el, "translateY", 0, 500, ease);
+                } else {
+                    var box = el.getBoundingClientRect();
+                    var y = box.height - (( evt.changedTouches[0].pageY - topPx) * 2) - (box.height / 2 - ( evt.changedTouches[0].pageY - topPx));
+
+                    var x = box.width - (( evt.changedTouches[0].pageX) * 2) - (box.width / 2 - ( evt.changedTouches[0].pageX));
+                    new To(el, "scaleX", 2, 500, ease);
+                    new To(el, "scaleY", 2, 500, ease);
+                    new To(el, "translateX", x, 500, ease);
+                    new To(el, "translateY", y, 500, ease);
+                }
+                //console.log("doubleTap");
+            },
+            longTap: function (evt) {
+                //console.log("longTap");
+            },
+            swipe: function (evt) {
+                //console.log("swipe" + evt.direction);
+            }
+
+        });
+
+    </script>
+</body>
+</html>

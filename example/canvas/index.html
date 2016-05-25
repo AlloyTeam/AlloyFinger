@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Canvas+AlloyFinger</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <style>
+        .ribbon {
+            top: 3.2em;
+            right: -4.7em;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+            color:#fff;
+            display: block;
+            padding: .6em 3.5em;
+            position: fixed;
+            text-align: center;
+            text-decoration: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-color: green;
+            z-index: 10000;
+        }
+    </style>
+</head>
+<body>
+<a href="https://github.com/AlloyTeam/AlloyFinger" class="ribbon">Fork me on Github</a>
+<script src="../../asset/alloy_paper.js"></script>
+<script src="../../alloy_finger.js"></script>
+<div style="text-align: center;"><canvas id="ourCanvas" width="300" height="600" style="border: 1px solid black;"></canvas></div>
+
+<script>
+
+    ;(function (AlloyPaper) {
+        var Stage = AlloyPaper.Stage, Bitmap = AlloyPaper.Bitmap,Loader=AlloyPaper.Loader;
+
+        var stage = new Stage("#ourCanvas");
+        stage.autoUpdate=false;
+        var ld = new Loader();
+        ld.loadRes([
+            { id: "test", src: "../../asset/test.png" },
+            { id: "test2", src: "../../asset/test2.png" }
+        ]);
+        ld.complete(function () {
+            var bmp = new Bitmap(ld.get("test"));
+            bmp.originX = 0.5;
+            bmp.originY = 0.5;
+            bmp.x = stage.width / 2;
+            bmp.y =150;
+            stage.add(bmp);
+
+            var bmp2 = new Bitmap(ld.get("test2"));
+            bmp2.originX = 0.5;
+            bmp2.originY = 0.5;
+            bmp2.x = stage.width / 2;
+            bmp2.y =450;
+            stage.add(bmp2);
+
+            stage.update();
+
+            var initScale = 1;
+            new AlloyFinger(bmp, {
+                multipointStart: function () {
+                    initScale = bmp.scaleX;
+                },
+                rotate: function (evt) {
+                    bmp.rotation += evt.angle;
+                    stage.update();
+                },
+                pinch: function (evt) {
+                    bmp.scaleX = bmp.scaleY = initScale * evt.scale;
+                    stage.update();
+                },
+                pressMove: function (evt) {
+                    bmp.x += evt.deltaX;
+                    bmp.y += evt.deltaY;
+                    stage.update();
+                }
+
+            });
+
+            new AlloyFinger(bmp2, {
+                multipointStart: function () {
+                    initScale = bmp2.scaleX;
+                },
+                rotate: function (evt) {
+                    bmp2.rotation += evt.angle;
+                    stage.update();
+                },
+                pinch: function (evt) {
+                    bmp2.scaleX = bmp2.scaleY = initScale * evt.scale;
+                    stage.update();
+                },
+                pressMove: function (evt) {
+                    bmp2.x += evt.deltaX;
+                    bmp2.y += evt.deltaY;
+                    stage.update();
+                }
+
+            });
+        });
+
+
+    })(AlloyPaper)
+
+
+
+</script>
+</body>
+</html>

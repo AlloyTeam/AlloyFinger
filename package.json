@@ -1,0 +1,27 @@
+{
+  "name": "alloyfinger",
+  "version": "0.1.0",
+  "description": "multi-touch gestures library for the web",
+  "main": "alloy_finger.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlloyTeam/AlloyFinger.git"
+  },
+  "keywords": [
+    "gesture",
+    "touch",
+    "multitouch"
+  ],
+  "author": "dntzhang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlloyTeam/AlloyFinger/issues"
+  },
+  "homepage": "https://github.com/AlloyTeam/AlloyFinger#readme"
+}

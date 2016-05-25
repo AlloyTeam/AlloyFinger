@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <style>
+        .ribbon {
+            top: 3.2em;
+            right: -4.7em;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+            color:#fff;
+            display: block;
+            padding: .6em 3.5em;
+            position: fixed;
+            text-align: center;
+            text-decoration: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-color: green;
+            z-index: 10000;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://github.com/AlloyTeam/AlloyFinger" class="ribbon">Fork me on Github</a>
+    <script src="../../asset/transform.js"></script>
+    <script src="../../alloy_finger.js"></script>
+    <img src="../../asset/test.png" id="testImg" alt="" />
+    <script>
+
+        var el = document.getElementById("testImg");
+        Transform(el);
+        var initScale = 1;
+        var gesture = new AlloyFinger(el, {
+            rotate: function (evt) {
+                el.rotateZ += evt.angle;
+            },
+            pinchStart: function () {
+                initScale = el.scaleX;
+            },
+            pinch: function (evt) {
+                el.scaleX = el.scaleY = initScale * evt.scale;
+            },
+            pressMove: function (evt) {
+                el.translateX += evt.deltaX;
+                el.translateY += evt.deltaY;
+            },
+            tap: function (evt) {
+                //console.log(el.scaleX + "_" + el.scaleY + "_" + el.rotateZ + "_" + el.translateX + "_" + el.translateY);
+                //console.log("tap");
+            },
+            doubleTap: function (evt) {
+                //console.log("doubleTap");
+            },
+            longTap: function (evt) {
+                //console.log("longTap");
+            },
+            swipe: function (evt) {
+                //console.log("swipe" + evt.direction);
+            }
+            
+        });
+
+    </script>
+</body>
+</html>
