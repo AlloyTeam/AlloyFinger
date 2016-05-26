@@ -64,7 +64,9 @@ You can install it via npm:
 npm install alloyfinger
 ```
 
+# Who is using AlloyFinger?
 
+![preview](http://sqimg.qq.com/qq_product_operations/im/qqlogo/imlogo.png)
 
 # License
 This content is released under the [MIT](http://opensource.org/licenses/MIT) License.
