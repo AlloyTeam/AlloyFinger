@@ -36,7 +36,7 @@ new AlloyFinger(element, {
 
 ### React Version:
 
-...js
+```js
 render() {
     return (
         <AlloyFinger
@@ -53,7 +53,7 @@ render() {
         </AlloyFinger>
     );
 }
-...
+```
 
 
 # Install
