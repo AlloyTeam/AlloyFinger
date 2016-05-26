@@ -1,4 +1,4 @@
-![preview](http://alloyteam.github.io/Nuclear/alloyfinger.png)
+![preview](http://alloyteam.github.io/AlloyFinger/alloyfinger.png)
 
 # Usage
 
