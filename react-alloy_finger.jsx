@@ -118,8 +118,9 @@ export default class AlloyFinger extends React.Component {
         this._cancelLongTap();
         this.x2 = currentX;
         this.y2 = currentY;
-        evt.preventDefault();
-
+        if(len>1) {
+            evt.preventDefault();
+        }
     }
 
     _handleTouchCancel(){
