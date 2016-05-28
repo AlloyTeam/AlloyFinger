@@ -121,7 +121,6 @@
             this._cancelLongTap();
             this.x2 = currentX;
             this.y2 = currentY;
-            evt.preventDefault();
         },
         end: function (evt) {
             if(!evt.changedTouches)return;
