@@ -306,8 +306,10 @@
             }
         }
         new AlloyFinger(swipeScroll, {
-            touchMove:function(evt){
-                evt.preventDefault();
+            touchMove:function(evt) {
+                if (evt.deltaX > evt.deltaY) {
+                    evt.preventDefault();
+                }
             },
             swipe:function(evt){
                 if(evt.direction==="Left"){
