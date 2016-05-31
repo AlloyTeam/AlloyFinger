@@ -334,10 +334,8 @@
         Transform(longTapBox);
         var overlay=document.getElementById("overlay");
         new AlloyFinger(longTapBox, {
-            touchStart:function(evt){
+            longTap:function(evt){
                 evt.preventDefault();
-            },
-            longTap:function(){
                 toggleDom(overlay);
             }
         });
