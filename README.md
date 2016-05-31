@@ -4,7 +4,13 @@
 
 ```js
 new AlloyFinger(element, {
-    pointStart: function () {
+    touchStart: function () {
+    },
+    touchMove: function () {
+    },
+    touchEnd: function () {
+    },
+    touchCancel: function () {
     },
     multipointStart: function () {
     },
