@@ -307,8 +307,7 @@
         }
         new AlloyFinger(swipeScroll, {
             touchMove:function(evt) {
-                document.querySelector('.ribbon').innerHTML=evt.deltaX+"__"+evt.deltaY
-                if (evt.deltaX >= evt.deltaY) {
+                if (Math.abs(evt.deltaX) >= Math.abs(evt.deltaY)) {
                     evt.preventDefault();
                 }
             },
