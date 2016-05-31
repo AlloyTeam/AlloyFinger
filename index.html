@@ -306,6 +306,9 @@
             }
         }
         new AlloyFinger(swipeScroll, {
+            touchMove:function(evt){
+                evt.preventDefault();
+            },
             swipe:function(evt){
                 if(evt.direction==="Left"){
                     if(currentIndex<2) {
