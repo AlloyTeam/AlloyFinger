@@ -133,7 +133,7 @@
             this._cancelLongTap();
             this.x2 = currentX;
             this.y2 = currentY;
-            if(evt.touches.length>1) {
+            if(evt.touches.length > 1) {
                 evt.preventDefault();
             }
         },

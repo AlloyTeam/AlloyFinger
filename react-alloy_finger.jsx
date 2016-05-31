@@ -110,15 +110,20 @@ export default class AlloyFinger extends React.Component {
             }
             preV.x = v.x;
             preV.y = v.y;
-        } else if (this.x2 !== null) {
-            evt.deltaX = currentX - this.x2;
-            evt.deltaY = currentY - this.y2;
+        } else {
+            if (this.x2 !== null) {
+                evt.deltaX = currentX - this.x2;
+                evt.deltaY = currentY - this.y2;
+            }else{
+                evt.deltaX = 0;
+                evt.deltaY = 0;
+            }
             this._emitEvent('onPressMove', evt);
         }
         this._cancelLongTap();
         this.x2 = currentX;
         this.y2 = currentY;
-        if(len>1) {
+        if(len > 1) {
             evt.preventDefault();
         }
     }
