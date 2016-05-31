@@ -1,4 +1,4 @@
-﻿/* AlloyFinger v0.1.0
+﻿/* AlloyFinger v0.1.2
  * By dntzhang
  * Github: https://github.com/AlloyTeam/AlloyFinger
  */
@@ -43,7 +43,7 @@
         this.scale = 1;
         this.isDoubleTap = false;
         this.rotate = option.rotate || function () { };
-        this.pointStart = option.pointStart || function () { };
+        this.touchStart = option.touchStart || function () { };
         this.multipointStart = option.multipointStart || function () { };
         this.multipointEnd=option.multipointEnd||function(){};
         this.pinch = option.pinch || function () { };
@@ -53,6 +53,9 @@
         this.longTap = option.longTap || function () { };
         this.singleTap = option.singleTap || function () { };
         this.pressMove = option.pressMove || function () { };
+        this.touchMove = option.touchMove || function () { };
+        this.touchEnd = option.touchEnd || function () { };
+        this.touchCancel = option.touchCancel || function () { };
 
         this.delta = null;
         this.last = null;
@@ -72,7 +75,7 @@
             this.x1 = evt.touches[0].pageX;
             this.y1 = evt.touches[0].pageY;
             this.delta = this.now - (this.last || this.now);
-            this.pointStart(evt);
+            this.touchStart(evt);
             if(this.preTapPosition.x!==null){
                 this.isDoubleTap = (this.delta > 0 && this.delta <= 250&&Math.abs(this.preTapPosition.x-this.x1)<30&&Math.abs(this.preTapPosition.y-this.y1)<30);
             }
@@ -113,11 +116,20 @@
                 }
                 preV.x = v.x;
                 preV.y = v.y;
-            } else if (this.x2 !== null) {
-                evt.deltaX = currentX - this.x2;
-                evt.deltaY = currentY - this.y2;
+            } else {
+                if (this.x2 !== null) {
+                    evt.deltaX = currentX - this.x2;
+                    evt.deltaY = currentY - this.y2;
+
+                }else{
+                    evt.deltaX = 0;
+                    evt.deltaY = 0;
+                }
                 this.pressMove(evt);
             }
+
+            this.touchMove(evt);
+
             this._cancelLongTap();
             this.x2 = currentX;
             this.y2 = currentY;
@@ -132,6 +144,7 @@
             if( evt.touches.length<2){
                 this.multipointEnd(evt);
             }
+            this.touchEnd(evt);
             //swipe
             if ((this.x2 && Math.abs(this.x1 - this.x2) > 30) ||
                 (this.y2 && Math.abs(this.preV.y - this.y2) > 30)) {
@@ -162,11 +175,12 @@
             this.pinchStartLen = null;
             this.x1 = this.x2 = this.y1 = this.y2 = null;
         },
-        cancel:function(){
+        cancel:function(evt){
             clearTimeout(this.touchTimeout);
             clearInterval(this.tapTimeout);
             clearInterval(this.longTapTimeout);
             clearInterval(this.swipeTimeout);
+            this.touchCancel(evt);
         },
         _cancelLongTap: function () {
             clearTimeout(this.longTapTimeout);
@@ -184,4 +198,3 @@
         window.AlloyFinger = AlloyFinger;
     }
 })();
-
