@@ -177,9 +177,9 @@
         },
         cancel:function(evt){
             clearTimeout(this.touchTimeout);
-            clearInterval(this.tapTimeout);
-            clearInterval(this.longTapTimeout);
-            clearInterval(this.swipeTimeout);
+            clearTimeout(this.tapTimeout);
+            clearTimeout(this.longTapTimeout);
+            clearTimeout(this.swipeTimeout);
             this.touchCancel(evt);
         },
         _cancelLongTap: function () {
