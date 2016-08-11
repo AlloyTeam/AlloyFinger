@@ -176,6 +176,7 @@
             this.scale = 1;
             this.pinchStartLen = null;
             this.x1 = this.x2 = this.y1 = this.y2 = null;
+            evt.preventDefault();
         },
         cancel:function(evt){
             clearTimeout(this.touchTimeout);
