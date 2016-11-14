@@ -1,5 +1,13 @@
 ![preview](http://alloyteam.github.io/AlloyFinger/alloyfinger.png)
 
+# Install
+
+You can install it via npm:
+
+```html
+npm install alloyfinger
+```
+
 # Usage
 
 ```js
@@ -59,15 +67,6 @@ render() {
         </AlloyFinger>
     );
 }
-```
-
-
-# Install
-
-You can install it via npm:
-
-```html
-npm install alloyfinger
 ```
 
 # Who is using AlloyFinger?
