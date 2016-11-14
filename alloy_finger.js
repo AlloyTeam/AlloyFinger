@@ -85,6 +85,7 @@
             var preV = this.preV,
                 len = evt.touches.length;
             if (len > 1) {
+                this._cancelLongTap();
                 var v = { x: evt.touches[1].pageX - this.x1, y: evt.touches[1].pageY - this.y1 };
                 preV.x = v.x;
                 preV.y = v.y;
@@ -133,7 +134,8 @@
             this._cancelLongTap();
             this.x2 = currentX;
             this.y2 = currentY;
-            if(evt.touches.length > 1) {
+            if (evt.touches.length > 1) {
+                this._cancelLongTap();
                 evt.preventDefault();
             }
         },
@@ -177,9 +179,9 @@
         },
         cancel:function(evt){
             clearTimeout(this.touchTimeout);
-            clearInterval(this.tapTimeout);
-            clearInterval(this.longTapTimeout);
-            clearInterval(this.swipeTimeout);
+            clearTimeout(this.tapTimeout);
+            clearTimeout(this.longTapTimeout);
+            clearTimeout(this.swipeTimeout);
             this.touchCancel(evt);
         },
         _cancelLongTap: function () {
