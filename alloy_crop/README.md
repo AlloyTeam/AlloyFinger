@@ -1,3 +1,12 @@
+# Install
+
+You can install it via npm:
+
+```html
+npm install alloycrop
+```
+
+
 ##API
 
 ```js
