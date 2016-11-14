@@ -79,6 +79,7 @@
                 pressMove: function (evt) {
                     bmp.x += evt.deltaX;
                     bmp.y += evt.deltaY;
+                    evt.preventDefault();
                     stage.update();
                 }
 
@@ -99,6 +100,7 @@
                 pressMove: function (evt) {
                     bmp2.x += evt.deltaX;
                     bmp2.y += evt.deltaY;
+                    evt.preventDefault();
                     stage.update();
                 }
 

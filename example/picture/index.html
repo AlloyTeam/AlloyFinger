@@ -97,6 +97,7 @@
             pressMove: function (evt) {
                 el.translateX += evt.deltaX;
                 el.translateY += evt.deltaY;
+                evt.preventDefault();
             },
             tap: function (evt) {
                 //console.log(el.scaleX + "_" + el.scaleY + "_" + el.rotateZ + "_" + el.translateX + "_" + el.translateY);
