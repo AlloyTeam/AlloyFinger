@@ -12,7 +12,7 @@ npm install alloycrop
 ```js
  new AlloyCrop({
         image_src: "img src",
-        circle:true,//¿ÉÑ¡
+        circle:true,// optional parameters
         width: 200,
         height: 200,
         ok: function ( base64,canvas) {
