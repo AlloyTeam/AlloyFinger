@@ -4,14 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
     <title>AlloyCrop base on AlloyFinger</title>
+    <style>
+        body{
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            background-color: black;
+            text-align: center;
+        }
+        #crop_btn{
+            color:white;
+            background-color: #836FFF;
+            height: 40px;
+            display: inline-block;
+            line-height: 40px;
+            width:110px;
+            text-align:center;
+            border-radius: 2px;
+        }
+        #crop_circle_btn{
+            color:white;
+            background-color: #836FFF;
+            height: 40px;
+            line-height: 40px;
+            width:110px;
+            text-align:center;
+            border-radius: 2px;
+            display: inline-block;
+            margin-left:20px ;
+        }
+    </style>
 </head>
 <img src="test.png" style="display: none;">
-<body style="background-color: black;text-align: center;">
+<body>
 <div id="crop_result" style="text-align: center;padding-top:30px;height: 230px;line-height: 300px;"></div>
-<a style="color:white;background-color: #836FFF;height: 40px;display: inline-block;line-height: 40px;width:100px;
- text-align:center;border-radius: 2px; " id="crop_btn">矩形裁剪</a>
-<a style="color:white;background-color: #836FFF;height: 40px;line-height: 40px;width:100px;
- text-align:center;border-radius: 2px;display: inline-block; margin-left:20px ;" id="crop_circle_btn">圆形裁剪</a>
+<a id="crop_btn">Crop Rect</a>
+<a id="crop_circle_btn">Crop Circle</a>
 
     <script src="../asset/transform.js"></script>
     <script src="../alloy_finger.js"></script>
@@ -35,47 +61,52 @@
                 crop_result.innerHTML = "";
             }
 
-            crop_btn.addEventListener("click", function () {
-                hideToolPanel();
-                new AlloyCrop({
-                    image_src: "test.png",
-                    width: 200,
-                    height: 100,
-                    ok: function ( base64,canvas) {
-                        crop_result.appendChild(canvas);
-                        crop_result.querySelector("canvas").style.borderRadius="0%";
-                        showToolPanel();
-                    },
-                    cancel: function () {
-                        showToolPanel();
-                    }
+            new AlloyFinger( crop_btn,{
+                tap: function () {
+                    hideToolPanel();
+                    new AlloyCrop({
+                        image_src: "test.png",
+                        width: 200,
+                        height: 100,
+                        ok: function ( base64,canvas) {
+                            crop_result.appendChild(canvas);
+                            crop_result.querySelector("canvas").style.borderRadius="0%";
+                            showToolPanel();
+                        },
+                        cancel: function () {
+                            showToolPanel();
+                        }
 
 
-                });
+                    });
 
-            }, false);
+                }
+            });
 
-            crop_circle_btn.addEventListener("click", function () {
-                hideToolPanel();
-                new AlloyCrop({
-                    image_src: "test.png",
-                    circle:true,
-                    width: 200,
-                    height: 200,
-                    ok: function ( base64,canvas) {
-                        crop_result.appendChild(canvas);
-                        crop_result.querySelector("canvas").style.borderRadius="50%";
-                        showToolPanel();
-                    },
-                    cancel: function () {
-                        showToolPanel();
-                    }
+            new AlloyFinger( crop_circle_btn ,{
+                tap:  function () {
+                    hideToolPanel();
+                    new AlloyCrop({
+                        image_src: "test.png",
+                        circle:true,
+                        width: 200,
+                        height: 200,
+                        ok: function ( base64,canvas) {
+                            crop_result.appendChild(canvas);
+                            crop_result.querySelector("canvas").style.borderRadius="50%";
+                            showToolPanel();
+                        },
+                        cancel: function () {
+                            showToolPanel();
+                        }
 
 
-                });
+                    });
 
 
-            }, false);
+                }
+            });
+
         })();
 
     </script>
