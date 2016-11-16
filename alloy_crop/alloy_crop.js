@@ -1,4 +1,4 @@
-/* AlloyCrop v0.1.0
+/* AlloyCrop v0.1.1
  * By dntzhang
  * Github: https://github.com/AlloyTeam/AlloyFinger/tree/master/alloy_crop
  */
@@ -183,16 +183,21 @@
         calculateRect:function() {
             var cr = this.img.getBoundingClientRect();
             var c_left = window.innerWidth / 2 - this.canvas.width / 2;
-            var c_top=window.innerHeight / 2 - this.canvas.height / 2;
-            var cover_rect = [c_left,c_top, this.canvas.width +c_left, this.canvas.height +c_top];
+            var c_top = window.innerHeight / 2 - this.canvas.height / 2;
+            var cover_rect = [c_left, c_top, this.canvas.width + c_left, this.canvas.height + c_top];
             var img_rect = [cr.left, cr.top, cr.width + cr.left, cr.height + cr.top];
             var intersect_rect = this.getOverlap.apply(this, cover_rect.concat(img_rect));
-            var left=(intersect_rect[0]-img_rect[0])/this.img.scaleX;
-            var top = (intersect_rect[1]-img_rect[1])/this.img.scaleY;
-            var width = intersect_rect[2]/this.img.scaleX;
-            var height = intersect_rect[3]/this.img.scaleY;
+            var left = (intersect_rect[0] - img_rect[0]) / this.img.scaleX;
+            var top = (intersect_rect[1] - img_rect[1]) / this.img.scaleY;
+            var width = intersect_rect[2] / this.img.scaleX;
+            var height = intersect_rect[3] / this.img.scaleY;
 
-            this.crop_rect =  [left,top,width,height];
+            if (left < 0)left = 0;
+            if (top < 0)top = 0;
+            if (left + width > this.img_width)width = this.img_width - left;
+            if (top + height > this.img_height)height = this.img_height - top;
+
+            this.crop_rect = [left, top, width, height];
         },
         // top left (x1,y1) and bottom right (x2,y2) coordination
         getOverlap:function( ax1,  ay1,  ax2,  ay2,  bx1,  by1,  bx2,  by2){
