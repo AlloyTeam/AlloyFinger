@@ -50,15 +50,8 @@
             //this.img.scaleX =  this.img.scaleY = 2;
             var self  = this;
             new AlloyFinger( this.croppingBox,{
-                multipointStart: function (evt) {
+                multipointStart: function () {
                     self.initScale = self.img.scaleX;
-
-                    var cr = self.img.getBoundingClientRect();
-                    var x = (evt.touches[0].pageX + evt.touches[1].pageX) / 2;
-                    var y = (evt.touches[0].pageY + evt.touches[1].pageY) / 2;
-
-                    self.img.originX = (x - cr.left) / cr.width * self.img_width;
-                    self.img.originY = (y - cr.top) / cr.height * self.img_height;
                 },
                 pinch: function (evt) {
                     self.img.scaleX =  self.img.scaleY = self.initScale * evt.scale;
