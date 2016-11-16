@@ -63,8 +63,15 @@
                     evt.preventDefault();
                 }
             });
-            this.cancel_btn.addEventListener("click",this._cancel.bind(this),false);
-            this.ok_btn.addEventListener("click",this._ok.bind(this),false);
+
+            new AlloyFinger( this.cancel_btn,{
+                tap: this._cancel.bind(this)
+            });
+
+            new AlloyFinger( this.ok_btn,{
+                tap: this._ok.bind(this)
+            });
+
             this.renderCover();
             this.setStyle();
 
