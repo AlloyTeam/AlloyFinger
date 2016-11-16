@@ -53,12 +53,12 @@
                 multipointStart: function (evt) {
                     self.initScale = self.img.scaleX;
                     
-                    var cr = self.img.getBoundingClientRect();
-                    var x = (evt.touches[0].pageX + evt.touches[1].pageX) / 2;
-                    var y = (evt.touches[0].pageY + evt.touches[1].pageY) / 2;
-
-                    self.img.originX =-1* (x - cr.left) / cr.width * self.img_width;
-                    self.img.originY =-1* (y - cr.top) / cr.height * self.img_height;
+                    //var cr = self.img.getBoundingClientRect();
+                    //var x = (evt.touches[0].pageX + evt.touches[1].pageX) / 2;
+                    //var y = (evt.touches[0].pageY + evt.touches[1].pageY) / 2;
+                    //
+                    //self.img.originX =-1* (x - cr.left) / cr.width * self.img_width;
+                    //self.img.originY =-1* (y - cr.top) / cr.height * self.img_height;
                 },
                 pinch: function (evt) {
                     self.img.scaleX =  self.img.scaleY = self.initScale * evt.scale;
