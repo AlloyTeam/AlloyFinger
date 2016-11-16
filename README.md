@@ -1,41 +1,39 @@
 ![preview](http://alloyteam.github.io/AlloyFinger/alloyfinger.png)
 
+# Install
+
+You can install it via npm:
+
+```html
+npm install alloyfinger
+```
+
 # Usage
 
 ```js
 new AlloyFinger(element, {
-    touchStart: function () {
-    },
-    touchMove: function () {
-    },
-    touchEnd: function () {
-    },
-    touchCancel: function () {
-    },
-    multipointStart: function () {
-    },
+    touchStart: function () { },
+    touchMove: function () { },
+    touchEnd:  function () { },
+    touchCancel: function () { },
+    multipointStart: function () { },
+    multipointEnd: function () { },
+    tap: function () { },
+    doubleTap: function () { },
+    longTap: function () { },
+    singleTap: function () { },
     rotate: function (evt) {
         console.log(evt.angle);
     },
     pinch: function (evt) {
         console.log(evt.scale);
     },
-    multipointEnd: function () {
-    },
     pressMove: function (evt) {
         console.log(evt.deltaX);
         console.log(evt.deltaY);
     },
-    tap: function (evt) {
-    },
-    doubleTap: function (evt) {
-    },
-    longTap: function (evt) {
-    },
     swipe: function (evt) {
         console.log("swipe" + evt.direction);
-    },
-    singleTap: function (evt) {
     }
 });
 ```
@@ -59,15 +57,6 @@ render() {
         </AlloyFinger>
     );
 }
-```
-
-
-# Install
-
-You can install it via npm:
-
-```html
-npm install alloyfinger
 ```
 
 # Who is using AlloyFinger?
