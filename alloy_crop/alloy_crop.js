@@ -206,5 +206,9 @@
         }
     };
 
-    window.AlloyCrop = AlloyCrop;
+    if (typeof module !== 'undefined' && typeof exports === 'object') {
+        module.exports = AlloyCrop;
+    }else {
+        window.AlloyCrop = AlloyCrop;
+    }
 })();

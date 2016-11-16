@@ -3,14 +3,16 @@
 <head lang="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
-    <title></title>
+    <title>AlloyCrop base on AlloyFinger</title>
 </head>
-<body style="background-color: black;">
+<img src="test.png" style="display: none;">
+<body style="background-color: black;text-align: center;">
+<div id="crop_result" style="text-align: center;padding-top:30px;height: 230px;line-height: 300px;"></div>
+<a style="color:white;background-color: #836FFF;height: 40px;display: inline-block;line-height: 40px;width:100px;
+ text-align:center;border-radius: 2px; " id="crop_btn">矩形裁剪</a>
 <a style="color:white;background-color: #836FFF;height: 40px;line-height: 40px;width:100px;
- text-align:center;border-radius: 2px; position: absolute;left: 50%;top: 50%;margin-left: -50px;margin-top: -40px;" id="crop_btn">开始裁剪</a>
-<a style="color:white;background-color: #836FFF;height: 40px;line-height: 40px;width:100px;
- text-align:center;border-radius: 2px; position: absolute;left: 50%;top: 50%;margin-left: -50px;margin-top: 20px;" id="crop_circle_btn">圆形裁剪</a>
-<div id="crop_result" style="text-align: center;padding-top:30px;"></div>
+ text-align:center;border-radius: 2px;display: inline-block; margin-left:20px ;" id="crop_circle_btn">圆形裁剪</a>
+
     <script src="../asset/transform.js"></script>
     <script src="../alloy_finger.js"></script>
 <script src="alloy_crop.js"></script>
@@ -21,9 +23,9 @@
             var crop_circle_btn = document.querySelector("#crop_circle_btn");
 
             function showToolPanel(){
-                crop_btn.style.display = "block";
+                crop_btn.style.display = "inline-block";
                 crop_result.style.display = "block";
-                crop_circle_btn.style.display = "block";
+                crop_circle_btn.style.display = "inline-block";
             }
 
             function hideToolPanel(){
@@ -78,6 +80,7 @@
 
     </script>
 
+<a href="https://github.com/AlloyTeam/AlloyFinger/tree/master/alloy_crop"><img style="position: absolute; top: 0; right: 0; border: 0;z-index: 1000;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
 
 </body>
 </html>
