@@ -12,11 +12,13 @@ npm install alloycrop
 ```js
 new AlloyCrop({
     image_src: "img src",
-    circle: true, // optional parameters
+    circle: true, // optional parameters , the default value is false
     width: 200,
     height: 200,
     ok: function (base64, canvas) { },
-    cancel: function () { }
+    cancel: function () { },
+	ok_text: "yes", // optional parameters , the default value is ok
+    cancel_text: "no" // optional parameters , the default value is cancel
 });
 ```
 
