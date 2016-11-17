@@ -19,3 +19,7 @@ npm install alloycrop
         cancel: function () { }
     });
 ```
+
+##Demo
+
+![alloy_crop.png](alloy_crop.png)
