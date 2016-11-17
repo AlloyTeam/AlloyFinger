@@ -1,6 +1,6 @@
 {
   "name": "alloycrop",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "crop image on mobile web",
   "main": "alloy_crop.js",
   "scripts": {
