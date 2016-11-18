@@ -1,3 +1,11 @@
+# Install
+
+You can install it via npm:
+
+```html
+npm install css3transform
+```
+
 ##API
 
 ```js

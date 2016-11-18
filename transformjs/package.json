@@ -1,0 +1,24 @@
+{
+  "name": "css3transform",
+  "version": "1.0.0",
+  "description": "made css3 transform super easy",
+  "main": "transform.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlloyTeam/AlloyFinger.git"
+  },
+  "keywords": [
+    "css3",
+    "transform",
+    "matrix"
+  ],
+  "author": "dntzhang",
+  "license": "MIT",
+  "bugs": {
+  "url": "https://github.com/AlloyTeam/AlloyFinger/issues"
+},
+  "homepage": "https://github.com/AlloyTeam/AlloyFinger/tree/master/transformjs"
+}
