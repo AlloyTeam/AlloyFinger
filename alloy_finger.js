@@ -1,4 +1,4 @@
-﻿/* AlloyFinger v0.1.2
+﻿/* AlloyFinger v0.1.3
  * By dntzhang
  * Github: https://github.com/AlloyTeam/AlloyFinger
  */
@@ -31,12 +31,15 @@
 
         return angle * 180 / Math.PI;
     }
+
     var AlloyFinger = function (el, option) {
 
-        el.addEventListener("touchstart", this.start.bind(this), false);
-        el.addEventListener("touchmove", this.move.bind(this), false);
-        el.addEventListener("touchend", this.end.bind(this), false);
-        el.addEventListener("touchcancel", this.cancel.bind(this), false);
+        this.element = typeof el == 'string' ? document.querySelector(el) : el;
+
+        this.element.addEventListener("touchstart", this.start.bind(this), false);
+        this.element.addEventListener("touchmove", this.move.bind(this), false);
+        this.element.addEventListener("touchend", this.end.bind(this), false);
+        this.element.addEventListener("touchcancel", this.cancel.bind(this), false);
 
         this.preV = { x: null, y: null };
         this.pinchStartLen = null;
