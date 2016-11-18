@@ -12,9 +12,33 @@
             #test.active {
                 background-color: red;
             }
+
+        .ribbon {
+            top: 3.2em;
+            right: -4.7em;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+            color:#fff;
+            display: block;
+            padding: .6em 3.5em;
+            position: fixed;
+            text-align: center;
+            text-decoration: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-color: #6c7211;
+            z-index: 10000;
+        }
+
     </style>
 </head>
 <body style="text-align: center; font-family: Segoe UI Light,Segoe UI,Microsoft Jhenghei,Mirco Yahei,'sans-serif'; background-color: black; color: white;">
+        <a href="https://github.com/AlloyTeam/AlloyFinger" class="ribbon">Fork me on Github</a>
     <div id="test" style="width: 280px; height: 200px; margin: 0 auto; line-height: 200px; font-size: 30px;">Tap Me</div>
     <div id="result" style="font-size: 18px;"></div>
     <script src="../../alloy_finger.js"></script>
