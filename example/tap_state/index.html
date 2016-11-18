@@ -51,14 +51,11 @@
 
             new AlloyFinger(testDiv, {
                 touchStart: function () {
-                    html = "";
-                    html += "start<br/>";
+                    html += "";
                     result.innerHTML = html;
                     addClass(testDiv, "active");
                 },
                 touchEnd: function () {
-                    html += "end<br/>";
-                    result.innerHTML = html;
                     removeClass(testDiv, "active");
                 },
                 tap: function () {
