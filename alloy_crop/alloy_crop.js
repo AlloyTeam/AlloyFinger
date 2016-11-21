@@ -1,4 +1,4 @@
-﻿/* AlloyCrop v0.1.2
+﻿/* AlloyCrop v0.1.3
  * By dntzhang
  * Github: https://github.com/AlloyTeam/AlloyFinger/tree/master/alloy_crop
  */
@@ -49,8 +49,11 @@
             this.img_width = this.img.width;
             this.img_height = this.img.height;
             Transform(this.img);
-            this.initScale = 1;
-            //this.img.scaleX =  this.img.scaleY = 2;
+            var scaling_x = window.innerWidth / this.img_width,
+                scaling_y = window.innerHeight / this.img_height;
+            var scaling = scaling_x > scaling_y ? scaling_y : scaling_x;
+            this.initScale = scaling;
+            this.img.scaleX = this.img.scaleY = scaling;
             var self = this;
             new AlloyFinger(this.croppingBox, {
                 multipointStart: function () {
