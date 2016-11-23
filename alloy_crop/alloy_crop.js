@@ -10,7 +10,7 @@
         this.canvas.height = option.height;
         this.circle = option.circle;
         if (option.width !== option.height && option.circle) {
-            throw "can't set circle to ture when width is not equal to height"
+            throw "can't set circle to true when width is not equal to height"
         }
         this.ctx = this.canvas.getContext("2d");
         this.croppingBox = document.createElement("div");
