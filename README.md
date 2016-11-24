@@ -59,6 +59,24 @@ render() {
 }
 ```
 
+### Vue1 Version:
+
+```html
+<alloy-finger
+    v-on:tap="onTap"
+    v-on:multipointstart="onMultipointStart"
+    v-on:longtap="onLongTap"
+    v-on:swipe="onSwipe"
+    v-on:pinch="onPinch"
+    v-on:rotate="onRotate"
+    v-on:pressmove="onPressMove"
+    v-on:multipointend="onMultipointEnd"
+    v-on:doubletap="onDoubleTap"
+>
+    <div>the element that you want to bind event</div>
+</alloy-finger>
+```
+
 # Who is using AlloyFinger?
 
 ![preview](http://sqimg.qq.com/qq_product_operations/im/qqlogo/imlogo.png)
