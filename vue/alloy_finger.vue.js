@@ -56,6 +56,8 @@ Vue.component('alloy-finger', {
     },
 
     _handleTouchStart: function(evt) {
+      var emit = this.$dispatch || this.$emit;
+
 			this.now = Date.now();
 			this.x1 = evt.touches[0].pageX;
 			this.y1 = evt.touches[0].pageY;
@@ -73,14 +75,16 @@ Vue.component('alloy-finger', {
 				preV.x = v.x;
 				preV.y = v.y;
 				this.pinchStartLen = getLen(preV);
-				this.$dispatch('multipointstart', evt);
+				emit.call(this, 'multipointstart', evt);
      	}
      	this.longTapTimeout = setTimeout(function(){
-        this.$dispatch('longtap', evt);
+        emit.call(this, 'longtap', evt);
      	}.bind(this), 750);
     },
 
     _handleTouchMove: function(evt){
+      var emit = this.$dispatch || this.$emit;
+
       var preV = this.preV,
 	        len = evt.touches.length,
 	        currentX = evt.touches[0].pageX,
@@ -92,11 +96,11 @@ Vue.component('alloy-finger', {
         if (preV.x !== null) {
           if (this.pinchStartLen > 0) {
             evt.scale = getLen(v) / this.pinchStartLen;
-            this.$dispatch('pinch', evt);
+            emit.call(this, 'pinch', evt);
           }
 
           evt.angle = getRotateAngle(v, preV);
-          this.$dispatch('rotate', evt);
+          emit.call(this, 'rotate', evt);
         }
         preV.x = v.x;
         preV.y = v.y;
@@ -108,7 +112,7 @@ Vue.component('alloy-finger', {
           evt.deltaX = 0;
           evt.deltaY = 0;
         }
-        this.$dispatch('pressmove', evt);
+        emit.call(this, 'pressmove', evt);
       }
       this._cancelLongTap();
       this.x2 = currentX;
@@ -125,23 +129,25 @@ Vue.component('alloy-finger', {
     },
 
     _handleTouchEnd: function(evt){
+      var emit = this.$dispatch || this.$emit;
+
       this._cancelLongTap();
       var self = this;
       if( evt.touches.length<2){
-        this.$dispatch('multipointend', evt);
+        emit.call(this, 'multipointend', evt);
       }
 
       if ((this.x2 && Math.abs(this.x1 - this.x2) > 30) ||
         (this.y2 && Math.abs(this.preV.y - this.y2) > 30)) {
         evt.direction = this._swipeDirection(this.x1, this.x2, this.y1, this.y2);
         this.swipeTimeout = setTimeout(function () {
-            self.$dispatch('swipe', evt);
+            emit.call(self, 'swipe', evt);
         }, 0)
       } else {
         this.tapTimeout = setTimeout(function () {
-          self.$dispatch('tap', evt);
+          emit.call(self, 'tap', evt);
           if (self.isDoubleTap) {
-            self.$dispatch('doubletap', evt);
+            emit.call(self, 'doubletap', evt);
             self.isDoubleTap = false;
           }
         }, 0)
