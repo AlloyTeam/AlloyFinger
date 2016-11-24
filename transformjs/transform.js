@@ -1,5 +1,6 @@
 ﻿/* transformjs
  * By dntzhang
+ * Github: https://github.com/AlloyTeam/AlloyTouch/tree/master/transformjs
  */
 ;(function () {
 
