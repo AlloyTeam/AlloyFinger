@@ -64,14 +64,19 @@ render() {
 ```html
 <alloy-finger
     v-on:tap="onTap"
-    v-on:multipointstart="onMultipointStart"
-    v-on:longtap="onLongTap"
+    v-on:multipoint-start="onMultipointStart"
+    v-on:long-tap="onLongTap"
     v-on:swipe="onSwipe"
     v-on:pinch="onPinch"
     v-on:rotate="onRotate"
-    v-on:pressmove="onPressMove"
-    v-on:multipointend="onMultipointEnd"
-    v-on:doubletap="onDoubleTap"
+    v-on:press-move="onPressMove"
+    v-on:multipoint-end="onMultipointEnd"
+    v-on:double-tap="onDoubleTap"
+
+    v-on:touch-start="onTouchStart"
+    v-on:touch-move="onTouchMove"
+    v-on:touch-end="onTouchEnd"
+    v-on:touch-cancel="onTouchCancel"
 >
     <div>the element that you want to bind event</div>
 </alloy-finger>
