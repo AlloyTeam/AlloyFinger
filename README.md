@@ -59,7 +59,7 @@ render() {
 }
 ```
 
-### Vue1 Version:
+### Vue1 & Vue2 Version:
 
 ```html
 <alloy-finger
