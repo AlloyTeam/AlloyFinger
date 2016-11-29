@@ -3,8 +3,8 @@
  * Github: https://github.com/AlloyTeam/AlloyFinger
  */
 
-// definition and register
-Vue.component('alloy-finger', {
+// definition
+var AlloyFinger = Vue.extend({
 	template: '<div v-on:touchstart="_handleTouchStart" v-on:touchmove="_handleTouchMove" v-on:touchcancel="_handleTouchCancel" v-on:touchend="_handleTouchEnd"><slot></slot></div>',
 	data: function() {
 		return {
@@ -177,3 +177,13 @@ Vue.component('alloy-finger', {
     }
 	}
 });
+
+// register
+Vue.component('alloy-finger', AlloyFinger);
+
+// export
+if(typeof module !== 'undefined' && typeof exports === 'object') {
+  module.exports = AlloyFinger;
+} else {
+  window.AlloyFinger = AlloyFinger;
+}
