@@ -81,6 +81,8 @@ render() {
     <div>the element that you want to bind event</div>
 </alloy-finger>
 ```
+# Many thanks to 
+[transformjs](http://alloyteam.github.io/AlloyTouch/transformjs/)
 
 # Who is using AlloyFinger?
 
