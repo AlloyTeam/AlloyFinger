@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test for vue</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+</head>
+<body>
+<div id="cnt">
+	<div
+    v-finger:tap="onTap"
+    v-finger:multipoint-start="onMultipointStart"
+    v-finger:long-tap="onLongTap"
+    v-finger:swipe="onSwipe"
+    v-finger:pinch="onPinch"
+    v-finger:rotate="onRotate"
+    v-finger:press-move="onPressMove"
+    v-finger:multipoint-end="onMultipointEnd"
+    v-finger:double-tap="onDoubleTap"
+
+    v-finger:touch-start="onTouchStart"
+    v-finger:touch-move="onTouchMove"
+    v-finger:touch-end="onTouchEnd"
+    v-finger:touch-cancel="onTouchCancel"
+  >
+		<div>the element that you want to bind event</div>
+	</div>
+</div>
+<script type="text/javascript" src="./vue.min.js"></script>
+<script type="text/javascript" src="../../../alloy_finger.js"></script>
+<script type="text/javascript" src="../../alloy_finger.vue.js"></script>
+<script type="text/javascript">
+	var h = new Vue({
+		el: '#cnt',
+		methods: {
+			onTap: function() { console.log('onTap'); },
+			onMultipointStart: function() { console.log('onMultipointStart'); },
+			onLongTap: function() { console.log('onLongTap'); },
+			onSwipe: function() { console.log('onSwipe'); },
+			onPinch: function() { console.log('onPinch'); },
+			onRotate: function() { console.log('onRotate'); },
+			onPressMove: function() { console.log('onPressMove'); },
+			onMultipointEnd: function() { console.log('onMultipointEnd'); },
+			onDoubleTap: function() { console.log('onDoubleTap'); },
+
+			onTouchStart: function() { console.log('onTouchStart'); },
+			onTouchMove: function() { console.log('onTouchMove'); },
+			onTouchEnd: function() { console.log('onTouchEnd'); },
+			onTouchCancel: function() { console.log('onTouchCancel'); }
+		}
+	});
+</script>
+</body>
+</html>
