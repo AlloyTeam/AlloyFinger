@@ -6,7 +6,7 @@
 </head>
 <body>
 <div id="cnt">
-	<div
+	<div v-if="ok"
     v-finger:tap="tap"
     v-finger:multipoint-start="multipointStart"
     v-finger:long-tap="longTap"
@@ -31,9 +31,13 @@
 <script type="text/javascript" src="../../alloy_finger.vue.js"></script>
 <script type="text/javascript">
 	Vue.use(AlloyFingerVue);
+  var data = {
+    ok: true
+  };
 
 	var h = new Vue({
 		el: '#cnt',
+    data: data,
 		methods: {
 			tap: function() { console.log('onTap'); },
       multipointStart: function() { console.log('onMultipointStart'); },

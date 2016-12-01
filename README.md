@@ -38,11 +38,14 @@ var af = new AlloyFinger(element, {
 });
 
 /**
- * this method can also add the event handler
+ * this method can also add or remove the event handler
  */
-af.on('tap', function() {});
+var onTap = function() {};
+
+af.on('tap', onTap);
 af.on('touchStart', function() {});
 
+af.off('tap', onTap);
 ```
 
 ### React Version:

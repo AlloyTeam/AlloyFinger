@@ -41,6 +41,14 @@
         this.handlers.push(handler);
     }
 
+    HandlerAdmin.prototype.del = function(handler) {
+        for(var i=this.handlers.length; i>=0; i--) {
+            if(this.handlers[i] === handler) {
+                this.handlers.splice(i, 1);
+            }
+        }
+    }
+
     HandlerAdmin.prototype.dispatch = function() {
         for(var i=0,len=this.handlers.length; i<len; i++) {
             this.handlers[i].apply(this.el, arguments);
@@ -222,6 +230,12 @@
         on: function(evt, handler) {
             if(this[evt]) {
                 this[evt].add(handler);
+            }
+        },
+
+        off: function(evt, handler) {
+            if(this[evt]) {
+                this[evt].del(handler);
             }
         }
     };

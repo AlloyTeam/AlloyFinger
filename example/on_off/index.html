@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Test</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <style>
+        #test {
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            background-color: green;
+        }
+
+         
+    </style>
+</head>
+<body style="text-align: center; font-family: Segoe UI Light,Segoe UI,Microsoft Jhenghei,Mirco Yahei,'sans-serif'; background-color: black; color: white;">
+    <div id="test" style="width: 280px; height: 200px; margin: 0 auto; line-height: 200px; font-size: 30px;">Touch Me</div>
+    <div id="result" style="font-size: 18px;"></div>
+    <script src="../../alloy_finger.js"></script>
+    <div>
+        <script>
+
+            var result = document.querySelector("#result"),
+                testDiv = document.querySelector("#test"),
+                html = "";
+
+            var af = new AlloyFinger(testDiv, {
+                touchStart: function () {
+                    html = "";
+                    html += "start<br/>";
+                    result.innerHTML = html;
+                 
+                },
+                touchEnd: function () {
+                    html += "end<br/>";
+                    result.innerHTML = html;
+                 
+                },
+                tap: function () {
+                    html += "tap<br/>";
+                    result.innerHTML = html;
+                }
+            });
+
+            var onLongTap = function() {
+                html += "longTap<br/>";
+                result.innerHTML = html;
+            }
+
+            af.on('longTap', onLongTap);
+
+            af.on('doubleTap', function() {
+                html += "doubleTap<br/>";
+                result.innerHTML = html;
+
+                af.off('longTap', onLongTap);
+            });
+        </script>
+    </div>
+</body>
+</html>

@@ -9,6 +9,7 @@
     install: function(Vue, options) {
       options = options || {};
       var AlloyFinger = window.AlloyFinger || options.AlloyFinger;
+      var isVue2 = !!(Vue.version.substr(0,1) == 2);
 
       if(!AlloyFinger) {
         throw new Error('you need include the AlloyFinger!');
@@ -33,35 +34,31 @@
 
       var CACHE = [];
 
-      // definition
-      Vue.directive('finger', function(elem, binding) {
-        if(Vue.version.substr(0,1) <= 1) {
-          // vue1.xx
-          binding = {
-            value: elem,
-            arg: this.arg
-          };
+      var directiveOpts = {};
 
-          elem = this.el;
-        }
-
-        var func = binding.value || function() {};
-        var eventName = binding.arg;
-
-        eventName = EVENTMAP[eventName];
-
-        var cacheObj;
+      // get the index for elem in CACHE
+      var getElemCacheIndex = function(elem) {
         for(var i=0,len=CACHE.length; i<len; i++) {
           if(CACHE[i].elem === elem) {
-            cacheObj = CACHE[i];
-            break;
+            return i;
           }
         }
 
+        return null;
+      };
+
+      // do on or off handler
+      var doOnOrOff = function(cacheObj, options) {
+        var eventName = options.eventName;
+        var elem = options.elem;
+        var func = options.func;
+        var oldFunc = options.oldFunc;
+
         if(cacheObj && cacheObj.alloyFinger) {
-          cacheObj.alloyFinger.on(eventName, func);
+          if(cacheObj.alloyFinger.off && oldFunc) cacheObj.alloyFinger.off(eventName, oldFunc);
+          if(cacheObj.alloyFinger.on && func) cacheObj.alloyFinger.on(eventName, func);
         } else {
-          var options = {};
+          options = {};
           options[eventName] = func;
 
           CACHE.push({
@@ -69,7 +66,64 @@
             alloyFinger: new AlloyFinger(elem, options)
           });
         }
-      });
+      }
+
+      // for bind the event
+      var doBindEvent = function(elem, binding) {
+        var func = binding.value;
+        var oldFunc = binding.oldValue;
+        var eventName = binding.arg;
+
+        eventName = EVENTMAP[eventName];
+
+        var cacheObj = CACHE[getElemCacheIndex(elem)];
+
+        doOnOrOff(cacheObj, {
+          elem: elem,
+          func: func,
+          oldFunc: oldFunc,
+          eventName: eventName
+        });
+      };
+
+      // for bind the event
+      var doUnbindEvent = function(elem) {
+        var index = getElemCacheIndex(elem);
+
+        if(!isNaN(index)) {
+          CACHE.splice(index, 1);
+        } 
+      };
+
+      if(isVue2) {
+        directiveOpts = {
+          bind: doBindEvent,
+          update: doBindEvent,
+          unbind: doUnbindEvent
+        };
+      } else {
+        // vue1.xx
+        directiveOpts = {
+          update: function(newValue, oldValue) {
+            var binding = {
+              value: newValue,
+              arg: this.arg
+            };
+
+            var elem = this.el;
+
+            doBindEvent.call(this, elem, binding);
+          },
+          unbind: function() {
+            var elem = this.el;
+
+            doUnbindEvent.call(this, elem);
+          }
+        }
+      }
+
+      // definition
+      Vue.directive('finger', directiveOpts);
     }
   }
 
