@@ -77,7 +77,7 @@
   if(typeof module !== 'undefined' && typeof exports === 'object') {
     module.exports = AlloyFingerPlugin;
   } else {
-    window.AlloyFingerPlugin = AlloyFingerPlugin;
+    window.AlloyFingerVue = AlloyFingerPlugin;
   }
 
 })();
