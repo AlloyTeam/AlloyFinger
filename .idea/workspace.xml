@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0ff5984f-7b7d-46ba-9205-b90ee2c9ba0e" name="Default" comment="" />
+    <list default="true" id="8cfd5aca-cb31-4b39-921a-3e7840e2768b" name="Default" comment="move to react dir">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="AlloyFinger.iws" />
     <ignored path=".idea/workspace.xml" />
-    <ignored path="$PROJECT_DIR$/.tmp/" />
-    <ignored path="$PROJECT_DIR$/temp/" />
-    <ignored path="$PROJECT_DIR$/tmp/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,39 +13,103 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
+    <option name="PATCH_PATH" value="C:\Users\dntzhang\AlloyFinger" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="AlloyFinger" />
   </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="16" column="16" selection-start-line="0" selection-start-column="0" selection-end-line="375" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/example/test/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Html5" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
-    <option name="UPDATE_TYPE" value="REBASE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="gh-pages" />
+      </map>
+    </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
-    <package-json value="$PROJECT_DIR$/package.json" />
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/example/simple/index.html" />
+        <option value="$PROJECT_DIR$/example/picture/index.html" />
+        <option value="$PROJECT_DIR$/example/canvas/index.html" />
+        <option value="$PROJECT_DIR$/react-alloy_finger.jsx" />
+        <option value="$PROJECT_DIR$/alloy_finger.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/asset/transform.js" />
+        <option value="$PROJECT_DIR$/example/cropping/index.html" />
+        <option value="$PROJECT_DIR$/cropping/index.html" />
+        <option value="$PROJECT_DIR$/transformjs/index.html" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/transformjs/package.json" />
+        <option value="$PROJECT_DIR$/alloy_crop/README.md" />
+        <option value="$PROJECT_DIR$/transformjs/README.md" />
+        <option value="$PROJECT_DIR$/alloy_crop/index.html" />
+        <option value="$PROJECT_DIR$/alloy_crop/package.json" />
+        <option value="$PROJECT_DIR$/alloy_crop/alloy_crop.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/example/test/index.html" />
+      </list>
+    </option>
   </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NamedScopeManager">
+    <order />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1456" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="false" id="Update" />
+    <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="1" id="Add" />
+    <ConfirmationsSetting value="0" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -60,10 +123,9 @@
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
-      <manualOrder />
-      <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -72,58 +134,459 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AlloyFinger" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AlloyFinger" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AlloyFinger" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AlloyFinger" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="example" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AlloyFinger" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AlloyFinger" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="example" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="FullScreen" value="false" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="146" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="153" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="152" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="946" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="146" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="153" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="152" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="946" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dntzhang\AlloyFinger\alloy_crop" />
+      <recent name="C:\Users\dntzhang\AlloyFinger" />
+      <recent name="C:\Users\dntzhang\AlloyFinger\cropping" />
+      <recent name="C:\Users\dntzhang\AlloyFinger\transformjs" />
+      <recent name="C:\Users\dntzhang\AlloyFinger\asset" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dntzhang\AlloyFinger\react" />
+      <recent name="C:\Users\dntzhang\AlloyFinger" />
+      <recent name="C:\Users\dntzhang\AlloyFinger\transformjs" />
+    </key>
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="JsTestDriver-test-runner" factoryName="JsTestDriver">
+      <setting name="configLocationType" value="CONFIG_FILE" />
+      <setting name="settingsFile" value="" />
+      <setting name="serverType" value="INTERNAL" />
+      <setting name="preferredDebugBrowser" value="Chrome" />
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0ff5984f-7b7d-46ba-9205-b90ee2c9ba0e" name="Default" comment="" />
-      <created>1480383194145</created>
+      <changelist id="8cfd5aca-cb31-4b39-921a-3e7840e2768b" name="Default" comment="" />
+      <created>1464218401941</created>
       <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1480383194145</updated>
-      <workItem from="1480383195372" duration="90000" />
+      <updated>1464218401941</updated>
     </task>
+    <task id="LOCAL-00001" summary="v0.1.0">
+      <created>1464219158323</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1464219158323</updated>
+    </task>
+    <task id="LOCAL-00002" summary="v0.1.0">
+      <created>1464219415800</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1464219415800</updated>
+    </task>
+    <task id="LOCAL-00003" summary="v0.1.0">
+      <created>1464219826306</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1464219826306</updated>
+    </task>
+    <task id="LOCAL-00004" summary="v0.1.0">
+      <created>1464219893045</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1464219893046</updated>
+    </task>
+    <task id="LOCAL-00005" summary="remove event.preventDefault()">
+      <created>1464407253824</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1464407253824</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add event.preventDefault()">
+      <created>1464407681425</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1464407681425</updated>
+    </task>
+    <task id="LOCAL-00007" summary="exec event.preventDefault() when over 1 finger touch the screen">
+      <created>1464443447873</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1464443447873</updated>
+    </task>
+    <task id="LOCAL-00008" summary="exec event.preventDefault() when over 1 finger touch the screen">
+      <created>1464443771542</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1464443771542</updated>
+    </task>
+    <task id="LOCAL-00009" summary="exec event.preventDefault() when the pressMove is called">
+      <created>1464487164887</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1464487164887</updated>
+    </task>
+    <task id="LOCAL-00010" summary="exec event.preventDefault() when the pressMove is called">
+      <created>1464487224507</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1464487224507</updated>
+    </task>
+    <task id="LOCAL-00011" summary="exec event.preventDefault() when the pressMove is called">
+      <created>1464487297573</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1464487297573</updated>
+    </task>
+    <task id="LOCAL-00012" summary="support touchStart touchMove touchEnd touchCancel callback">
+      <created>1464660301574</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1464660301574</updated>
+    </task>
+    <task id="LOCAL-00013" summary="support touchStart touchMove touchEnd touchCancel callback">
+      <created>1464660367030</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1464660367030</updated>
+    </task>
+    <task id="LOCAL-00014" summary="support touchStart touchMove touchEnd touchCancel callback">
+      <created>1464660577043</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1464660577043</updated>
+    </task>
+    <task id="LOCAL-00015" summary="smart preventDefault">
+      <created>1464660738730</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1464660738730</updated>
+    </task>
+    <task id="LOCAL-00016" summary="smart preventDefault">
+      <created>1464660812232</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1464660812232</updated>
+    </task>
+    <task id="LOCAL-00017" summary="test">
+      <created>1464660969289</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1464660969289</updated>
+    </task>
+    <task id="LOCAL-00018" summary="smart preventDefault">
+      <created>1464661079296</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1464661079296</updated>
+    </task>
+    <task id="LOCAL-00019" summary="smart preventDefault">
+      <created>1464661187975</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1464661187975</updated>
+    </task>
+    <task id="LOCAL-00020" summary="smart preventDefault">
+      <created>1464661677928</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1464661677928</updated>
+    </task>
+    <task id="LOCAL-00021" summary="smart preventDefault">
+      <created>1464661718654</created>
+      <option name="number" value="00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1464661718654</updated>
+    </task>
+    <task id="LOCAL-00022" summary="smart preventDefault">
+      <created>1464661781157</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1464661781157</updated>
+    </task>
+    <task id="LOCAL-00023" summary="update alloyfinger react version">
+      <created>1464662063359</created>
+      <option name="number" value="00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1464662063359</updated>
+    </task>
+    <task id="LOCAL-00024" summary="update alloyfinger react version">
+      <created>1464662075347</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1464662075347</updated>
+    </task>
+    <task id="LOCAL-00025" summary="smart  evt.preventDefault();">
+      <created>1464687713765</created>
+      <option name="number" value="00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1464687713765</updated>
+    </task>
+    <task id="LOCAL-00026" summary="smart  evt.preventDefault();">
+      <created>1464687825458</created>
+      <option name="number" value="00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1464687825458</updated>
+    </task>
+    <task id="LOCAL-00027" summary="smart  evt.preventDefault();">
+      <created>1464687995334</created>
+      <option name="number" value="00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1464687995334</updated>
+    </task>
+    <task id="LOCAL-00028" summary="smart  evt.preventDefault();">
+      <created>1464688174791</created>
+      <option name="number" value="00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1464688174791</updated>
+    </task>
+    <task id="LOCAL-00029" summary="smart  evt.preventDefault();">
+      <created>1464688935693</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1464688935693</updated>
+    </task>
+    <task id="LOCAL-00030" summary="smart  evt.preventDefault();">
+      <created>1464689076361</created>
+      <option name="number" value="00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1464689076361</updated>
+    </task>
+    <task id="LOCAL-00031" summary="transformjs+AlloyCrop">
+      <created>1479091982191</created>
+      <option name="number" value="00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1479091982191</updated>
+    </task>
+    <task id="LOCAL-00032" summary="transformjs+AlloyCrop">
+      <created>1479092437393</created>
+      <option name="number" value="00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1479092437393</updated>
+    </task>
+    <task id="LOCAL-00033" summary="transformjs+AlloyCrop">
+      <created>1479092696754</created>
+      <option name="number" value="00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1479092696754</updated>
+    </task>
+    <task id="LOCAL-00034" summary="transformjs+AlloyCrop">
+      <created>1479093021679</created>
+      <option name="number" value="00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1479093021679</updated>
+    </task>
+    <task id="LOCAL-00035" summary="transformjs+AlloyCrop">
+      <created>1479093121399</created>
+      <option name="number" value="00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1479093121399</updated>
+    </task>
+    <task id="LOCAL-00036" summary="AlloyCrop demo">
+      <created>1479259799784</created>
+      <option name="number" value="00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1479259799784</updated>
+    </task>
+    <task id="LOCAL-00037" summary="AlloyCrop demo">
+      <created>1479259929535</created>
+      <option name="number" value="00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1479259929535</updated>
+    </task>
+    <task id="LOCAL-00038" summary="AlloyCrop demo">
+      <created>1479261219131</created>
+      <option name="number" value="00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1479261219131</updated>
+    </task>
+    <task id="LOCAL-00039" summary="change click to tap">
+      <created>1479261324343</created>
+      <option name="number" value="00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1479261324343</updated>
+    </task>
+    <task id="LOCAL-00040" summary="change click to tap">
+      <created>1479261874345</created>
+      <option name="number" value="00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1479261874345</updated>
+    </task>
+    <task id="LOCAL-00041" summary="change click to tap">
+      <created>1479261924599</created>
+      <option name="number" value="00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1479261924599</updated>
+    </task>
+    <task id="LOCAL-00042" summary="fix origin">
+      <created>1479270408980</created>
+      <option name="number" value="00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1479270408980</updated>
+    </task>
+    <task id="LOCAL-00043" summary="fix origin">
+      <created>1479270433891</created>
+      <option name="number" value="00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1479270433891</updated>
+    </task>
+    <task id="LOCAL-00044" summary="fix origin">
+      <created>1479270527708</created>
+      <option name="number" value="00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1479270527708</updated>
+    </task>
+    <task id="LOCAL-00045" summary="fix origin">
+      <created>1479270612852</created>
+      <option name="number" value="00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1479270612852</updated>
+    </task>
+    <task id="LOCAL-00046" summary="fix origin">
+      <created>1479271051536</created>
+      <option name="number" value="00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1479271051536</updated>
+    </task>
+    <task id="LOCAL-00047" summary="move to react dir">
+      <created>1479976425271</created>
+      <option name="number" value="00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1479976425271</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90000" />
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25069445" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298153" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3285528" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985657" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39895698" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985657" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -137,8 +600,85 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="v0.1.0" />
+    <MESSAGE value="remove event.preventDefault()" />
+    <MESSAGE value="add event.preventDefault()" />
+    <MESSAGE value="exec event.preventDefault() when over 1 finger touch the screen" />
+    <MESSAGE value="exec event.preventDefault() when the pressMove is called" />
+    <MESSAGE value="support touchStart touchMove touchEnd touchCancel callback" />
+    <MESSAGE value="test" />
+    <MESSAGE value="smart preventDefault" />
+    <MESSAGE value="update alloyfinger react version" />
+    <MESSAGE value="smart  evt.preventDefault();" />
+    <MESSAGE value="transformjs+AlloyCrop" />
+    <MESSAGE value="AlloyCrop demo" />
+    <MESSAGE value="change click to tap" />
+    <MESSAGE value="fix origin" />
+    <MESSAGE value="move to react dir" />
+    <option name="LAST_COMMIT_MESSAGE" value="move to react dir" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="16" selection-start-line="0" selection-start-column="0" selection-end-line="375" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/test/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="16" selection-start-line="0" selection-start-column="0" selection-end-line="375" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/test/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="16" selection-start-line="0" selection-start-column="0" selection-end-line="375" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/test/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
