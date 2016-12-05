@@ -97,7 +97,7 @@
         this.last = null;
         this.now = null;
         this.tapTimeout = null;
-        this.touchTimeout = null;
+        this.singleTapTimeout = null;
         this.longTapTimeout = null;
         this.swipeTimeout = null;
         this.x1 = this.x2 = this.y1 = this.y2 = null;
