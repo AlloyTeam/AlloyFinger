@@ -122,6 +122,7 @@
                 len = evt.touches.length;
             if (len > 1) {
                 this._cancelLongTap();
+                this._cancelSingleTap();
                 var v = { x: evt.touches[1].pageX - this.x1, y: evt.touches[1].pageY - this.y1 };
                 preV.x = v.x;
                 preV.y = v.y;
@@ -196,10 +197,10 @@
                     // trigger double tap immediately
                     if (self.isDoubleTap) {
                         self.doubleTap.dispatch(evt);
-                        clearTimeout(self.touchTimeout);
+                        clearTimeout(self.singleTapTimeout);
                         self.isDoubleTap = false;
                     } else {
-                        self.touchTimeout = setTimeout(function () {
+                        self.singleTapTimeout = setTimeout(function () {
                             self.singleTap.dispatch(evt);
                         }, 250);
                     }
@@ -213,7 +214,7 @@
             this.x1 = this.x2 = this.y1 = this.y2 = null;
         },
         cancel: function (evt) {
-            clearTimeout(this.touchTimeout);
+            clearTimeout(this.singleTapTimeout);
             clearTimeout(this.tapTimeout);
             clearTimeout(this.longTapTimeout);
             clearTimeout(this.swipeTimeout);
@@ -221,6 +222,9 @@
         },
         _cancelLongTap: function () {
             clearTimeout(this.longTapTimeout);
+        },
+        _cancelSingleTap: function () {
+            clearTimeout(this.singleTapTimeout);
         },
         _swipeDirection: function (x1, x2, y1, y2) {
             return Math.abs(x1 - x2) >= Math.abs(y1 - y2) ? (x1 - x2 > 0 ? 'Left' : 'Right') : (y1 - y2 > 0 ? 'Up' : 'Down')
