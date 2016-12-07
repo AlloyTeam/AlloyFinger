@@ -57,7 +57,7 @@ export default class AlloyFinger extends React.Component {
     }
 
 
-    _emitEvent = (name, e) => {
+    _emitEvent(name, e) {
         if (this.props[name]) {
             this.props[name](e);
         }
