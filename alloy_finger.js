@@ -42,6 +42,8 @@
     }
 
     HandlerAdmin.prototype.del = function(handler) {
+        if(!handler) this.handlers = [];
+
         for(var i=this.handlers.length; i>=0; i--) {
             if(this.handlers[i] === handler) {
                 this.handlers.splice(i, 1);
@@ -66,10 +68,14 @@
 
         this.element = typeof el == 'string' ? document.querySelector(el) : el;
 
-        this.element.addEventListener("touchstart", this.start.bind(this), false);
-        this.element.addEventListener("touchmove", this.move.bind(this), false);
-        this.element.addEventListener("touchend", this.end.bind(this), false);
-        this.element.addEventListener("touchcancel", this.cancel.bind(this), false);
+        this.start = this.start.bind(this);
+        this.move = this.move.bind(this);
+        this.end = this.end.bind(this);
+        this.cancel = this.cancel.bind(this);
+        this.element.addEventListener("touchstart", this.start, false);
+        this.element.addEventListener("touchmove", this.move, false);
+        this.element.addEventListener("touchend", this.end, false);
+        this.element.addEventListener("touchcancel", this.cancel, false);
 
         this.preV = { x: null, y: null };
         this.pinchStartLen = null;
@@ -240,6 +246,37 @@
             if(this[evt]) {
                 this[evt].del(handler);
             }
+        },
+
+        destroy: function() {
+            if(this.singleTapTimeout) clearTimeout(this.singleTapTimeout);
+            if(this.tapTimeout) clearTimeout(this.tapTimeout);
+            if(this.longTapTimeout) clearTimeout(this.longTapTimeout);
+            if(this.swipeTimeout) clearTimeout(this.swipeTimeout);
+
+            this.element.removeEventListener("touchstart", this.start, false);
+            this.element.removeEventListener("touchmove", this.move, false);
+            this.element.removeEventListener("touchend", this.end, false);
+            this.element.removeEventListener("touchcancel", this.cancel, false);
+
+            this.rotate.del();
+            this.touchStart.del();
+            this.multipointStart.del();
+            this.multipointEnd.del();
+            this.pinch.del();
+            this.swipe.del();
+            this.tap.del();
+            this.doubleTap.del();
+            this.longTap.del();
+            this.singleTap.del();
+            this.pressMove.del();
+            this.touchMove.del();
+            this.touchEnd.del();
+            this.touchCancel.del();
+
+            this.preV = this.pinchStartLen = this.scale = this.isDoubleTap = this.delta = this.last = this.now = this.tapTimeout = this.singleTapTimeout = this.longTapTimeout = this.swipeTimeout = this.x1 = this.x2 = this.y1 = this.y2 = this.preTapPosition = this.rotate = this.touchStart = this.multipointStart = this.multipointEnd = this.pinch = this.swipe = this.tap = this.doubleTap = this.longTap = this.singleTap = this.pressMove = this.touchMove = this.touchEnd = this.touchCancel = null;
+
+            return null;
         }
     };
 

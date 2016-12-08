@@ -46,6 +46,11 @@ af.on('tap', onTap);
 af.on('touchStart', function() {});
 
 af.off('tap', onTap);
+
+/**
+ * this method can destroy the instance
+ */
+af = af.destroy();
 ```
 
 ### React Version:

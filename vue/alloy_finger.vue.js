@@ -91,7 +91,10 @@
         var index = getElemCacheIndex(elem);
 
         if(!isNaN(index)) {
-          CACHE.splice(index, 1);
+          var delArr = CACHE.splice(index, 1);
+          if(delArr.length && delArr[0] && delArr[0].destroy) {
+            delArr[0].destroy();
+          }
         } 
       };
 
