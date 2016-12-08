@@ -254,10 +254,10 @@
             if(this.longTapTimeout) clearTimeout(this.longTapTimeout);
             if(this.swipeTimeout) clearTimeout(this.swipeTimeout);
 
-            this.element.removeEventListener("touchstart", this.start, false);
-            this.element.removeEventListener("touchmove", this.move, false);
-            this.element.removeEventListener("touchend", this.end, false);
-            this.element.removeEventListener("touchcancel", this.cancel, false);
+            this.element.removeEventListener("touchstart", this.start);
+            this.element.removeEventListener("touchmove", this.move);
+            this.element.removeEventListener("touchend", this.end);
+            this.element.removeEventListener("touchcancel", this.cancel);
 
             this.rotate.del();
             this.touchStart.del();
