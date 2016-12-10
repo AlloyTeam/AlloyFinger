@@ -53,7 +53,8 @@
 
     HandlerAdmin.prototype.dispatch = function() {
         for(var i=0,len=this.handlers.length; i<len; i++) {
-            this.handlers[i].apply(this.el, arguments);
+            var handler = this.handlers[i];
+            if(typeof handler === 'function') handler.apply(this.el, arguments);
         }
     }
 
