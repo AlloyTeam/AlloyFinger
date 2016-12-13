@@ -21,7 +21,10 @@
         this.cover.height = window.innerHeight;
         this.cover_ctx = this.cover.getContext("2d");
         this.img = document.createElement("img");
-        this.img.crossOrigin = "Anonymous";
+        
+        if(option.image_src.substring(0,4).toLowerCase()==='http') {
+            this.img.crossOrigin = 'anonymous';//resolve base64 uri bug in safari:"cross-origin image load denied by cross-origin resource sharing policy."
+        }
         this.cancel = option.cancel;
         this.ok = option.ok;
 
