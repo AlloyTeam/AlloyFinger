@@ -1,4 +1,4 @@
-﻿/* AlloyFinger v0.1.3
+﻿/* AlloyFinger v0.1.4
  * By dntzhang
  * Github: https://github.com/AlloyTeam/AlloyFinger
  */
