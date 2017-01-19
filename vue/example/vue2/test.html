@@ -13,7 +13,7 @@
     v-finger:swipe="swipe"
     v-finger:pinch="pinch"
     v-finger:rotate="rotate"
-    v-finger:press-move="pressMove"
+    v-finger:press-move="pressMove.bind(this, 12)"
     v-finger:multipoint-end="multipointEnd"
     v-finger:double-tap="doubleTap"
     v-finger:single-tap="singleTap"
@@ -54,10 +54,10 @@
         console.log(evt.angle);
         console.log('onRotate'); 
       },
-      pressMove: function(evt) { 
+      pressMove: function(num, evt) {
         console.log(evt.deltaX);
         console.log(evt.deltaY);
-        console.log('onPressMove'); 
+        console.log('onPressMove with params:' + num); 
       },
       multipointEnd: function() { console.log('onMultipointEnd'); },
       doubleTap: function() { console.log('onDoubleTap'); },

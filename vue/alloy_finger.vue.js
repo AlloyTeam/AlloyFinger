@@ -110,6 +110,7 @@
           update: function(newValue, oldValue) {
             var binding = {
               value: newValue,
+              oldValue: oldValue,
               arg: this.arg
             };
 
