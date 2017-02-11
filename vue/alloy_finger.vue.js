@@ -66,7 +66,7 @@
             alloyFinger: new AlloyFinger(elem, options)
           });
         }
-      }
+      };
 
       // for bind the event
       var doBindEvent = function(elem, binding) {
@@ -92,8 +92,8 @@
 
         if(!isNaN(index)) {
           var delArr = CACHE.splice(index, 1);
-          if(delArr.length && delArr[0] && delArr[0].destroy) {
-            delArr[0].destroy();
+          if(delArr.length && delArr[0] && delArr[0].alloyFinger.destroy) {
+            delArr[0].alloyFinger.destroy();
           }
         } 
       };
