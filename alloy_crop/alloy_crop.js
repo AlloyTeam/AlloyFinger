@@ -51,7 +51,7 @@
 
             this.img_width = this.img.width;
             this.img_height = this.img.height;
-            Transform(this.img);
+            Transform(this.img,true);
             var scaling_x = window.innerWidth / this.img_width,
                 scaling_y = window.innerHeight / this.img_height;
             var scaling = scaling_x > scaling_y ? scaling_y : scaling_x;
