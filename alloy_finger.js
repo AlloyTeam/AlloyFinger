@@ -1,4 +1,4 @@
-﻿/* AlloyFinger v0.1.4
+﻿/* AlloyFinger v0.1.5
  * By dntzhang
  * Github: https://github.com/AlloyTeam/AlloyFinger
  */
@@ -192,7 +192,7 @@
             this.touchEnd.dispatch(evt);
             //swipe
             if ((this.x2 && Math.abs(this.x1 - this.x2) > 30) ||
-                (this.y2 && Math.abs(this.preV.y - this.y2) > 30)) {
+                (this.y2 && Math.abs(this.y1 - this.y2) > 30)) {
                 evt.direction = this._swipeDirection(this.x1, this.x2, this.y1, this.y2);
                 this.swipeTimeout = setTimeout(function () {
                     self.swipe.dispatch(evt);
