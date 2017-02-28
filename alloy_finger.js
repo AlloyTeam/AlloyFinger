@@ -1,4 +1,4 @@
-﻿/* AlloyFinger v0.1.5
+﻿/* AlloyFinger v0.1.6
  * By dntzhang
  * Github: https://github.com/AlloyTeam/AlloyFinger
  */
@@ -206,12 +206,14 @@
                         self.doubleTap.dispatch(evt);
                         clearTimeout(self.singleTapTimeout);
                         self.isDoubleTap = false;
-                    } else {
-                        self.singleTapTimeout = setTimeout(function () {
-                            self.singleTap.dispatch(evt);
-                        }, 250);
                     }
                 }, 0)
+
+                if (!self.isDoubleTap) {
+                    self.singleTapTimeout = setTimeout(function () {
+                        self.singleTap.dispatch(evt);
+                    }, 250);
+                }
             }
 
             this.preV.x = 0;
