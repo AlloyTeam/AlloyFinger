@@ -91,10 +91,10 @@ render() {
 }
 ```
 
-# Many thanks to 
-[transformjs](http://alloyteam.github.io/AlloyTouch/transformjs/)
+# Thanks and Donate
 
-# [Donate to AlloyFinger](http://alloyteam.github.io/donate.html)
+* [transformjs](http://alloyteam.github.io/AlloyTouch/transformjs/)
+* [Donate to AlloyFinger](http://alloyteam.github.io/donate.html)
 
 # License
 This content is released under the [MIT](http://opensource.org/licenses/MIT) License.
