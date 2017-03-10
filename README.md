@@ -91,12 +91,10 @@ render() {
 }
 ```
 
-# Many thanks to 
-[transformjs](http://alloyteam.github.io/AlloyTouch/transformjs/)
+# Thanks and Donate
 
-# Who is using AlloyFinger?
-
-![preview](http://sqimg.qq.com/qq_product_operations/im/qqlogo/imlogo.png)
+* [transformjs](http://alloyteam.github.io/AlloyTouch/transformjs/)
+* [Donate to AlloyFinger](http://alloyteam.github.io/donate.html)
 
 # License
 This content is released under the [MIT](http://opensource.org/licenses/MIT) License.
