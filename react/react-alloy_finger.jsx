@@ -64,8 +64,7 @@ export default class AlloyFinger extends React.Component {
     }
 
     _handleTouchStart (evt) {
-
-
+       evt.persist();
        this.now = Date.now();
        this.x1 = evt.touches[0].pageX;
        this.y1 = evt.touches[0].pageY;
@@ -91,6 +90,7 @@ export default class AlloyFinger extends React.Component {
     }
 
     _handleTouchMove(evt){
+        evt.persist();
         var preV = this.preV,
                     len = evt.touches.length,
                     currentX = evt.touches[0].pageX,
