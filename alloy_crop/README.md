@@ -16,7 +16,7 @@ new AlloyCrop({
     height: 200,
     ok: function (base64, canvas) { },
     cancel: function () { },
-	ok_text: "yes", // optional parameters , the default value is ok
+    ok_text: "yes", // optional parameters , the default value is ok
     cancel_text: "no" // optional parameters , the default value is cancel
 });
 ```
