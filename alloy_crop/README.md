@@ -6,8 +6,7 @@ You can install it via npm:
 npm install alloycrop
 ```
 
-
-##API
+## API
 
 ```js
 new AlloyCrop({
@@ -22,6 +21,6 @@ new AlloyCrop({
 });
 ```
 
-##Demo
+## Demo
 
 ![alloy_crop.png](alloy_crop.png)
