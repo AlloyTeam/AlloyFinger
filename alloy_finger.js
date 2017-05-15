@@ -1,4 +1,4 @@
-﻿/* AlloyFinger v0.1.6
+﻿/* AlloyFinger v0.1.7
  * By dntzhang
  * Github: https://github.com/AlloyTeam/AlloyFinger
  */
@@ -80,7 +80,7 @@
 
         this.preV = { x: null, y: null };
         this.pinchStartLen = null;
-        this.scale = 1;
+        this.zoom = 1;
         this.isDoubleTap = false;
 
         var noop = function () { };
@@ -152,7 +152,7 @@
 
                 if (preV.x !== null) {
                     if (this.pinchStartLen > 0) {
-                        evt.scale = getLen(v) / this.pinchStartLen;
+                        evt.zoom = getLen(v) / this.pinchStartLen;
                         this.pinch.dispatch(evt);
                     }
 
@@ -218,7 +218,7 @@
 
             this.preV.x = 0;
             this.preV.y = 0;
-            this.scale = 1;
+            this.zoom = 1;
             this.pinchStartLen = null;
             this.x1 = this.x2 = this.y1 = this.y2 = null;
         },
@@ -277,7 +277,7 @@
             this.touchEnd.del();
             this.touchCancel.del();
 
-            this.preV = this.pinchStartLen = this.scale = this.isDoubleTap = this.delta = this.last = this.now = this.tapTimeout = this.singleTapTimeout = this.longTapTimeout = this.swipeTimeout = this.x1 = this.x2 = this.y1 = this.y2 = this.preTapPosition = this.rotate = this.touchStart = this.multipointStart = this.multipointEnd = this.pinch = this.swipe = this.tap = this.doubleTap = this.longTap = this.singleTap = this.pressMove = this.touchMove = this.touchEnd = this.touchCancel = null;
+            this.preV = this.pinchStartLen = this.zoom = this.isDoubleTap = this.delta = this.last = this.now = this.tapTimeout = this.singleTapTimeout = this.longTapTimeout = this.swipeTimeout = this.x1 = this.x2 = this.y1 = this.y2 = this.preTapPosition = this.rotate = this.touchStart = this.multipointStart = this.multipointEnd = this.pinch = this.swipe = this.tap = this.doubleTap = this.longTap = this.singleTap = this.pressMove = this.touchMove = this.touchEnd = this.touchCancel = null;
 
             return null;
         }

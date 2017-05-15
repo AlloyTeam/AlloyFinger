@@ -241,7 +241,7 @@
                 initScale = pinchImg.scaleX;
             },
             pinch: function (evt) {
-                pinchImg.scaleX = pinchImg.scaleY = initScale * evt.scale;
+                pinchImg.scaleX = pinchImg.scaleY = initScale * evt.zoom;
             }
         });
 
@@ -263,7 +263,7 @@
                 initScale = pinchRotateImg.scaleX;
             },
             pinch: function (evt) {
-                pinchRotateImg.scaleX = pinchRotateImg.scaleY = initScale * evt.scale;
+                pinchRotateImg.scaleX = pinchRotateImg.scaleY = initScale * evt.zoom;
             }
         });
 
