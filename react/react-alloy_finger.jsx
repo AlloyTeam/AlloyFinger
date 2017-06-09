@@ -32,9 +32,9 @@ export default class AlloyFinger extends React.Component {
     }
 
      getAngle(v1, v2) {
-        var mr = getLen(v1) * getLen(v2);
+        var mr = this.getLen(v1) * this.getLen(v2);
         if (mr === 0) return 0;
-        var r = dot(v1, v2) / mr;
+        var r = this.dot(v1, v2) / mr;
         if (r > 1) r = 1;
         return Math.acos(r);
     }
@@ -44,8 +44,8 @@ export default class AlloyFinger extends React.Component {
     }
 
      getRotateAngle(v1, v2) {
-        var angle = getAngle(v1, v2);
-        if (cross(v1, v2) > 0) {
+        var angle = this.getAngle(v1, v2);
+        if (this.cross(v1, v2) > 0) {
             angle *= -1;
         }
 
@@ -105,7 +105,7 @@ export default class AlloyFinger extends React.Component {
                     this._emitEvent('onPinch', evt);
                 }
 
-                evt.angle = getRotateAngle(v, preV);
+                evt.angle = this.getRotateAngle(v, preV);
                 this._emitEvent('onRotate', evt);
             }
             preV.x = v.x;
