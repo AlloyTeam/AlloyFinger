@@ -101,7 +101,7 @@ export default class AlloyFinger extends React.Component {
 
             if (preV.x !== null) {
                 if (this.pinchStartLen > 0) {
-                    evt.scale = getLen(v) / this.pinchStartLen;
+                    evt.scale = this.getLen(v) / this.pinchStartLen;
                     this._emitEvent('onPinch', evt);
                 }
 
