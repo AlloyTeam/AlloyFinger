@@ -81,7 +81,7 @@ export default class AlloyFinger extends React.Component {
            var v = { x: evt.touches[1].pageX - this.x1, y: evt.touches[1].pageY - this.y1 };
            preV.x = v.x;
            preV.y = v.y;
-           this.pinchStartLen = getLen(preV);
+           this.pinchStartLen = this.getLen(preV);
            this._emitEvent('onMultipointStart', evt);
        }
        this.longTapTimeout = setTimeout(function(){
