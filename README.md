@@ -43,7 +43,7 @@ var af = new AlloyFinger(element, {
         console.log(evt.angle);
     },
     pinch: function (evt) {
-        console.log(evt.scale);
+        console.log(evt.zoom);
     },
     pressMove: function (evt) {
         console.log(evt.deltaX);
