@@ -189,7 +189,7 @@
             if (evt.touches.length < 2) {
                 this.multipointEnd.dispatch(evt);
             }
-            this.touchEnd.dispatch(evt);
+
             //swipe
             if ((this.x2 && Math.abs(this.x1 - this.x2) > 30) ||
                 (this.y2 && Math.abs(this.y1 - this.y2) > 30)) {
@@ -215,6 +215,8 @@
                     }, 250);
                 }
             }
+
+            this.touchEnd.dispatch(evt);
 
             this.preV.x = 0;
             this.preV.y = 0;
