@@ -73,6 +73,10 @@ af = af.destroy();
 ### React Version:
 
 ```js
+import AlloyFinger from 'alloyfinger/dist/react/AlloyFinger';
+
+// ...
+
 render() {
     return (
         <AlloyFinger
