@@ -7,7 +7,25 @@
     "example": "example"
   },
   "scripts": {
+    "prepare": "npm run build",
+    "build": "if [ -d dist ]; then rm -r dist; fi; npm run build:react",
+    "build:react": "babel react --out-dir dist/react --source-map",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.24.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-class-properties": "^6.23.0",
+    "babel-plugin-transform-decorators": "^6.24.1",
+    "babel-plugin-transform-function-bind": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.3.2",
+    "babel-preset-react": "^6.24.1",
+    "babel-runtime": "^6.23.0",
+    "fast-async": "^6.2.2",
+    "husky": "^0.13.3"
   },
   "repository": {
     "type": "git",

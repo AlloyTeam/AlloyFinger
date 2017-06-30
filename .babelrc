@@ -1,0 +1,31 @@
+{
+  "presets": [
+    ["env", {
+      "targets": {
+        "browsers": ["last 2 versions", "> 5%"],
+        "ios": 7,
+        "android": 4,
+        "node": 6,
+        "ie": 11
+      },
+      "include": [],
+      "exclude": [
+        "transform-async-to-generator"
+      ],
+      "uglify": true,
+      "useBuiltIns": true,
+      "loose": false,
+      "debug": false
+    }],
+    "react"
+  ],
+  "plugins": [
+    "add-module-exports",
+    "transform-es2015-modules-commonjs",
+    "fast-async",
+    "transform-function-bind",
+    "transform-class-properties",
+    "transform-object-rest-spread",
+    "transform-decorators"
+  ]
+}
