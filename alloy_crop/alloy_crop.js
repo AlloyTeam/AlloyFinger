@@ -63,7 +63,7 @@
                     self.initScale = self.img.scaleX;
                 },
                 pinch: function (evt) {
-                    self.img.scaleX = self.img.scaleY = self.initScale * evt.scale;
+                    self.img.scaleX = self.img.scaleY = self.initScale * evt.zoom;
                 },
                 pressMove: function (evt) {
 
