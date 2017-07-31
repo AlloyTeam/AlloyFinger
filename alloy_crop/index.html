@@ -71,6 +71,7 @@
                         image_src: "test.png",
                         width: 200,
                         height: 100,
+                        output: 1.5,
                         ok: function (base64, canvas) {
                             crop_result.appendChild(canvas);
                             crop_result.querySelector("canvas").style.borderRadius = "0%";
@@ -92,6 +93,7 @@
                         circle: true,
                         width: 200,
                         height: 200,
+                        output: 1,
                         ok: function (base64, canvas) {
                             crop_result.appendChild(canvas);
                             crop_result.querySelector("canvas").style.borderRadius = "50%";

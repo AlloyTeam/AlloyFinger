@@ -1,4 +1,4 @@
-﻿/* AlloyCrop v0.1.3
+﻿/* AlloyCrop v0.2.0
  * By dntzhang
  * Github: https://github.com/AlloyTeam/AlloyFinger/tree/master/alloy_crop
  */
@@ -6,8 +6,11 @@
     var AlloyCrop = function (option) {
         this.renderTo = document.body;
         this.canvas = document.createElement("canvas");
-        this.canvas.width = option.width;
-        this.canvas.height = option.height;
+        this.output = option.output;
+        this.width = option.width;
+        this.height = option.height;
+        this.canvas.width = option.width * this.output;
+        this.canvas.height = option.height * this.output;
         this.circle = option.circle;
         if (option.width !== option.height && option.circle) {
             throw "can't set circle to true when width is not equal to height"
@@ -102,8 +105,8 @@
             var ctx = this.cover_ctx,
                 w = this.cover.width,
                 h = this.cover.height,
-                cw = this.canvas.width,
-                ch = this.canvas.height;
+                cw = this.width,
+                ch = this.height;
             ctx.save();
             ctx.fillStyle = "black";
             ctx.globalAlpha = 0.7;
@@ -189,9 +192,9 @@
         },
         calculateRect: function () {
             var cr = this.img.getBoundingClientRect();
-            var c_left = window.innerWidth / 2 - this.canvas.width / 2;
-            var c_top = window.innerHeight / 2 - this.canvas.height / 2;
-            var cover_rect = [c_left, c_top, this.canvas.width + c_left, this.canvas.height + c_top];
+            var c_left = window.innerWidth / 2 - this.width / 2;
+            var c_top = window.innerHeight / 2 - this.height / 2;
+            var cover_rect = [c_left, c_top, this.width + c_left, this.height + c_top];
             var img_rect = [cr.left, cr.top, cr.width + cr.left, cr.height + cr.top];
             var intersect_rect = this.getOverlap.apply(this, cover_rect.concat(img_rect));
             var left = (intersect_rect[0] - img_rect[0]) / this.img.scaleX;

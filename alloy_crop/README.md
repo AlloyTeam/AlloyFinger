@@ -12,8 +12,9 @@ npm install alloycrop
 new AlloyCrop({
     image_src: "img src",
     circle: true, // optional parameters , the default value is false
-    width: 200,
-    height: 200,
+    width: 200, // crop width
+    height: 100, // crop height
+    output: 2, // output resolution --> 400*200
     ok: function (base64, canvas) { },
     cancel: function () { },
     ok_text: "yes", // optional parameters , the default value is ok
