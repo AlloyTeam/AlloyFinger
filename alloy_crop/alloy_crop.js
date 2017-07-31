@@ -69,16 +69,16 @@
                     var cr = self.img.getBoundingClientRect();
                     var img_centerX = cr.left + cr.width / 2;
                     var img_centerY = cr.top + cr.height / 2;
-                    var offX = centerX - img_centerX ;
+                    var offX = centerX - img_centerX;
                     var offY = centerY - img_centerY;
-                    self.img.originX = offX/self.img.scaleX - self.img.originX;
-                    self.img.originY =  offY/self.img.scaleY  - self.img.originY;
+                    var preOriginX = self.img.originX
+                    var preOriginY = self.img.originY
+                    self.img.originX = offX / self.img.scaleX;
+                    self.img.originY = offY / self.img.scaleY;
                     //reset translateX and translateY
-                    self.img.translateX += offX;
-                    self.img.translateY += offY;
-                    console.log( self.img.originX +"__"+ self.img.originY)
-                    console.log(offX)
-                    console.log(offY)
+                    self.img.translateX += offX - preOriginX * self.img.scaleX;
+                    self.img.translateY += offY - preOriginY * self.img.scaleX;
+
                     self.initScale = self.img.scaleX;
                 },
                 pinch: function (evt) {
