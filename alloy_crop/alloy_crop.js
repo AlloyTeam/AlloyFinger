@@ -74,8 +74,9 @@
                     self.img.originX = offX/self.img.scaleX;
                     self.img.originY =  offY/self.img.scaleY;
                     //reset translateX and translateY
-                    self.img.translateX -= offX;
-                    self.img.translateY -= offY;
+                    self.img.translateX +=  self.img.originX;
+                    self.img.translateY += self.img.originY;
+                    console.log( self.img.originX +"__"+ self.img.originY)
                     console.log(offX)
                     console.log('..')
                     console.log(offY)
