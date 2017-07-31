@@ -74,11 +74,8 @@
                     self.img.originX = ox
                     self.img.originY = oy
                     //reset translateX and translateY
-                    self.img.translateX += ox;
-                    self.img.translateY += oy;
-
-                    console.log(ox)
-                    console.log(oy)
+                    self.img.translateX -= ox;
+                    self.img.translateY -= oy;
                     self.initScale = self.img.scaleX;
                 },
                 pinch: function (evt) {
