@@ -25,6 +25,10 @@ export default class AlloyFinger extends Component {
         this.swipeTimeout=null;
         this.x1 = this.x2 = this.y1 = this.y2 = null;
         this.preTapPosition={x: null, y: null};
+
+        // Disable taps after longTap
+        this.afterLongTap = false;
+        this.afterLongTapTimeout = null;
     }
 
     getLen(v) {
@@ -99,6 +103,10 @@ export default class AlloyFinger extends Component {
         }
         this.longTapTimeout = setTimeout(() => {
             this._emitEvent('onLongTap', evt);
+            this.afterLongTap = true;
+            this.afterLongTapTimeout = setTimeout(() => {
+                this.afterLongTap = false;
+            }, 1000);
         }, 750);
     }
 
@@ -170,18 +178,23 @@ export default class AlloyFinger extends Component {
                     this._emitEvent('onSwipe', evt);
                 }, 0);
             } else {
-                this.tapTimeout = setTimeout(() => {
-                    this._emitEvent('onTap', evt);
-                    if (this.isDoubleTap) {
-                        this._emitEvent('onDoubleTap', evt);
-                        clearTimeout(this.singleTapTimeout);
-                        this.isDoubleTap = false;
-                    } else {
-                        this.singleTapTimeout = setTimeout(()=>{
-                            this._emitEvent('onSingleTap', evt);
-                        }, 250);
-                    }
-                }, 0);
+                if (this.afterLongTap) {
+                    clearTimeout(this.afterLongTapTimeout);
+                    this.afterLongTap = false;
+                } else {
+                    this.tapTimeout = setTimeout(() => {
+                        this._emitEvent('onTap', evt);
+                        if (this.isDoubleTap) {
+                            this._emitEvent('onDoubleTap', evt);
+                            clearTimeout(this.singleTapTimeout);
+                            this.isDoubleTap = false;
+                        } else {
+                            this.singleTapTimeout = setTimeout(()=>{
+                                this._emitEvent('onSingleTap', evt);
+                            }, 250);
+                        }
+                    }, 0);
+                }
             }
         }
 
