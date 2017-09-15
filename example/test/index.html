@@ -55,6 +55,11 @@
                 swipe: function (evt) {
                     html += "swipe [" + evt.direction+"]<br/>";
                     result.innerHTML = html;
+                },
+                twoFingerPressMove: function (evt) {
+                    html += "pressMove [" + evt.deltaX.toFixed(4) + "|" + evt.deltaY.toFixed(4) + "]<br/>";
+                    result.innerHTML = html;
+                    evt.preventDefault();
                 }
             })
 
