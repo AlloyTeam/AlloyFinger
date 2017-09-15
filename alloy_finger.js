@@ -1,4 +1,4 @@
-﻿/* AlloyFinger v0.1.7
+/* AlloyFinger v0.1.7
  * By dntzhang
  * Github: https://github.com/AlloyTeam/AlloyFinger
  */
@@ -96,6 +96,7 @@
         this.longTap = wrapFunc(this.element, option.longTap || noop);
         this.singleTap = wrapFunc(this.element, option.singleTap || noop);
         this.pressMove = wrapFunc(this.element, option.pressMove || noop);
+        this.twoFingerPressMove = wrapFunc(this.element, option.twoFingerPressMove || noop);
         this.touchMove = wrapFunc(this.element, option.touchMove || noop);
         this.touchEnd = wrapFunc(this.element, option.touchEnd || noop);
         this.touchCancel = wrapFunc(this.element, option.touchCancel || noop);
@@ -148,6 +149,8 @@
                 currentY = evt.touches[0].pageY;
             this.isDoubleTap = false;
             if (len > 1) {
+                var sCurrentX = evt.touches[1].pageX,
+                    sCurrentY = evt.touches[1].pageY
                 var v = { x: evt.touches[1].pageX - currentX, y: evt.touches[1].pageY - currentY };
 
                 if (preV.x !== null) {
@@ -161,6 +164,18 @@
                 }
                 preV.x = v.x;
                 preV.y = v.y;
+
+                if (this.x2 !== null && this.sx2 !== null) {
+                    evt.deltaX = (currentX - this.x2 + sCurrentX - this.sx2) / 2;
+                    evt.deltaY = (currentY - this.y2 + sCurrentY - this.sy2) / 2;
+                } else {
+                    evt.deltaX = 0;
+                    evt.deltaY = 0;
+                }
+                this.twoFingerPressMove.dispatch(evt);
+
+                this.sx2 = currentX;
+                this.sy2 = currentY;
             } else {
                 if (this.x2 !== null) {
                     evt.deltaX = currentX - this.x2;
@@ -170,6 +185,8 @@
                     evt.deltaX = 0;
                     evt.deltaY = 0;
                 }
+                
+                
                 this.pressMove.dispatch(evt);
             }
 
@@ -178,6 +195,7 @@
             this._cancelLongTap();
             this.x2 = currentX;
             this.y2 = currentY;
+            
             if (len > 1) {
                 evt.preventDefault();
             }
@@ -275,11 +293,12 @@
             this.longTap.del();
             this.singleTap.del();
             this.pressMove.del();
+            this.twoFingerPressMove.del()
             this.touchMove.del();
             this.touchEnd.del();
             this.touchCancel.del();
 
-            this.preV = this.pinchStartLen = this.zoom = this.isDoubleTap = this.delta = this.last = this.now = this.tapTimeout = this.singleTapTimeout = this.longTapTimeout = this.swipeTimeout = this.x1 = this.x2 = this.y1 = this.y2 = this.preTapPosition = this.rotate = this.touchStart = this.multipointStart = this.multipointEnd = this.pinch = this.swipe = this.tap = this.doubleTap = this.longTap = this.singleTap = this.pressMove = this.touchMove = this.touchEnd = this.touchCancel = null;
+            this.preV = this.pinchStartLen = this.zoom = this.isDoubleTap = this.delta = this.last = this.now = this.tapTimeout = this.singleTapTimeout = this.longTapTimeout = this.swipeTimeout = this.x1 = this.x2 = this.y1 = this.y2 = this.preTapPosition = this.rotate = this.touchStart = this.multipointStart = this.multipointEnd = this.pinch = this.swipe = this.tap = this.doubleTap = this.longTap = this.singleTap = this.pressMove = this.touchMove = this.touchEnd = this.touchCancel = this.twoFingerPressMove = null;
 
             return null;
         }
