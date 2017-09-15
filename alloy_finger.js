@@ -174,8 +174,8 @@
                 }
                 this.twoFingerPressMove.dispatch(evt);
 
-                this.sx2 = currentX;
-                this.sy2 = currentY;
+                this.sx2 = sCurrentX;
+                this.sy2 = sCurrentY;
             } else {
                 if (this.x2 !== null) {
                     evt.deltaX = currentX - this.x2;
