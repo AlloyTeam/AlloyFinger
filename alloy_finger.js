@@ -1,4 +1,4 @@
-/* AlloyFinger v0.1.7
+/* AlloyFinger v0.1.10
  * By dntzhang
  * Github: https://github.com/AlloyTeam/AlloyFinger
  */
@@ -101,6 +101,11 @@
         this.touchEnd = wrapFunc(this.element, option.touchEnd || noop);
         this.touchCancel = wrapFunc(this.element, option.touchCancel || noop);
 
+        this._cancelAllHandler = this.cancelAll.bind(this);
+        window.removeEventListener('scroll', this._cancelAllHandler);
+
+        window.addEventListener('scroll', this._cancelAllHandler);
+
         this.delta = null;
         this.last = null;
         this.now = null;
@@ -137,8 +142,10 @@
                 this.pinchStartLen = getLen(preV);
                 this.multipointStart.dispatch(evt);
             }
+            this._preventTap = false;
             this.longTapTimeout = setTimeout(function () {
                 this.longTap.dispatch(evt);
+                this._preventTap = true;
             }.bind(this), 750);
         },
         move: function (evt) {
@@ -218,7 +225,9 @@
                 }, 0)
             } else {
                 this.tapTimeout = setTimeout(function () {
-                    self.tap.dispatch(evt);
+                    if(!self._preventTap){
+                        self.tap.dispatch(evt);
+                    }
                     // trigger double tap immediately
                     if (self.isDoubleTap) {
                         self.doubleTap.dispatch(evt);
@@ -242,11 +251,15 @@
             this.pinchStartLen = null;
             this.x1 = this.x2 = this.y1 = this.y2 = null;
         },
-        cancel: function (evt) {
+        cancelAll: function () {
+            this._preventTap = true
             clearTimeout(this.singleTapTimeout);
             clearTimeout(this.tapTimeout);
             clearTimeout(this.longTapTimeout);
             clearTimeout(this.swipeTimeout);
+        },
+        cancel: function (evt) {
+            this.cancelAll()
             this.touchCancel.dispatch(evt);
         },
         _cancelLongTap: function () {
