@@ -1,4 +1,6 @@
-![preview](http://alloyteam.github.io/AlloyFinger/alloyfinger.png)
+# Preview
+
+You can touch this → [http://alloyteam.github.io/AlloyFinger/]([http://alloyteam.github.io/AlloyFinger/)
 
 # Install
 
