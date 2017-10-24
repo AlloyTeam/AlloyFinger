@@ -24,7 +24,7 @@ npm install alloyfinger
     render() {
         return  `
         <div>
-            <div omi-finger ref="touchArea" onTap="handleTap"  onSwipe="handleSwipe" >
+            <div omi-finger ref="touchArea" onTap={this.handleTap}  onSwipe={this.handleSwipe} >
                 Tap or Swipe Me!
             </div>
         </div>
