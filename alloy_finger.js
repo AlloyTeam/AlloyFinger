@@ -124,7 +124,7 @@
             this.x1 = evt.touches[0].pageX;
             this.y1 = evt.touches[0].pageY;
             this.delta = this.now - (this.last || this.now);
-            this.touchStart.dispatch(evt);
+            this.touchStart.dispatch(evt, this.element);
             if (this.preTapPosition.x !== null) {
                 this.isDoubleTap = (this.delta > 0 && this.delta <= 250 && Math.abs(this.preTapPosition.x - this.x1) < 30 && Math.abs(this.preTapPosition.y - this.y1) < 30);
             }
@@ -140,11 +140,11 @@
                 preV.x = v.x;
                 preV.y = v.y;
                 this.pinchStartLen = getLen(preV);
-                this.multipointStart.dispatch(evt);
+                this.multipointStart.dispatch(evt, this.element);
             }
             this._preventTap = false;
             this.longTapTimeout = setTimeout(function () {
-                this.longTap.dispatch(evt);
+                this.longTap.dispatch(evt, this.element);
                 this._preventTap = true;
             }.bind(this), 750);
         },
@@ -163,11 +163,11 @@
                 if (preV.x !== null) {
                     if (this.pinchStartLen > 0) {
                         evt.zoom = getLen(v) / this.pinchStartLen;
-                        this.pinch.dispatch(evt);
+                        this.pinch.dispatch(evt, this.element);
                     }
 
                     evt.angle = getRotateAngle(v, preV);
-                    this.rotate.dispatch(evt);
+                    this.rotate.dispatch(evt, this.element);
                 }
                 preV.x = v.x;
                 preV.y = v.y;
@@ -179,7 +179,7 @@
                     evt.deltaX = 0;
                     evt.deltaY = 0;
                 }
-                this.twoFingerPressMove.dispatch(evt);
+                this.twoFingerPressMove.dispatch(evt, this.element);
 
                 this.sx2 = sCurrentX;
                 this.sy2 = sCurrentY;
@@ -194,10 +194,10 @@
                 }
                 
                 
-                this.pressMove.dispatch(evt);
+                this.pressMove.dispatch(evt, this.element);
             }
 
-            this.touchMove.dispatch(evt);
+            this.touchMove.dispatch(evt, this.element);
 
             this._cancelLongTap();
             this.x2 = currentX;
@@ -212,7 +212,7 @@
             this._cancelLongTap();
             var self = this;
             if (evt.touches.length < 2) {
-                this.multipointEnd.dispatch(evt);
+                this.multipointEnd.dispatch(evt, this.element);
             }
 
             //swipe
@@ -220,17 +220,17 @@
                 (this.y2 && Math.abs(this.y1 - this.y2) > 30)) {
                 evt.direction = this._swipeDirection(this.x1, this.x2, this.y1, this.y2);
                 this.swipeTimeout = setTimeout(function () {
-                    self.swipe.dispatch(evt);
+                    self.swipe.dispatch(evt, this.element);
 
                 }, 0)
             } else {
                 this.tapTimeout = setTimeout(function () {
                     if(!self._preventTap){
-                        self.tap.dispatch(evt);
+                        self.tap.dispatch(evt, this.element);
                     }
                     // trigger double tap immediately
                     if (self.isDoubleTap) {
-                        self.doubleTap.dispatch(evt);
+                        self.doubleTap.dispatch(evt, this.element);
                         clearTimeout(self.singleTapTimeout);
                         self.isDoubleTap = false;
                     }
@@ -238,12 +238,12 @@
 
                 if (!self.isDoubleTap) {
                     self.singleTapTimeout = setTimeout(function () {
-                        self.singleTap.dispatch(evt);
+                        self.singleTap.dispatch(evt, this.element);
                     }, 250);
                 }
             }
 
-            this.touchEnd.dispatch(evt);
+            this.touchEnd.dispatch(evt, this.element);
 
             this.preV.x = 0;
             this.preV.y = 0;
@@ -260,7 +260,7 @@
         },
         cancel: function (evt) {
             this.cancelAll()
-            this.touchCancel.dispatch(evt);
+            this.touchCancel.dispatch(evt, this.element);
         },
         _cancelLongTap: function () {
             clearTimeout(this.longTapTimeout);
