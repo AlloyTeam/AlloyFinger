@@ -63,7 +63,7 @@
                 el.rotateZ += evt.angle;
             },
             pinch: function (evt) {
-                el.scaleX = el.scaleY = initScale * evt.scale;
+                el.scaleX = el.scaleY = initScale * evt.zoom;
             },
             multipointEnd: function () {
                 To.stopAll();
