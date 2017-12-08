@@ -45,7 +45,7 @@ var h = new Vue({
             console.log('onSwipe');
         },
         pinch: function(evt) { 
-            console.log(evt.scale);
+            console.log(evt.zoom);
             console.log('onPinch'); 
         },
         rotate: function(evt) {
