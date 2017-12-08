@@ -69,6 +69,17 @@ var h = new Vue({
 });
 ```
 
+Otherwise, you can also include it with 'import', for example:
+
+```
+import Vue from 'vue'
+import AlloyFinger from 'alloyfinger'
+import AlloyFingerPlugin from 'alloyfinger/vue/alloy_finger.vue'
+Vue.use(AlloyFingerPlugin, {
+    AlloyFinger
+})
+```
+
 # Many thanks to 
 [transformjs](http://alloyteam.github.io/AlloyTouch/transformjs/)
 
