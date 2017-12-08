@@ -71,7 +71,7 @@ var h = new Vue({
 
 Otherwise, you can also include it with 'import', for example:
 
-```
+```javascript
 import Vue from 'vue'
 import AlloyFinger from 'alloyfinger'
 import AlloyFingerPlugin from 'alloyfinger/vue/alloy_finger.vue'
