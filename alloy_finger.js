@@ -213,6 +213,7 @@
             var self = this;
             if (evt.touches.length < 2) {
                 this.multipointEnd.dispatch(evt, this.element);
+                this.sx2 = this.sy2 = null;
             }
 
             //swipe
