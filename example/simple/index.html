@@ -45,7 +45,7 @@
                 initScale = el.scaleX;
             },
             pinch: function (evt) {
-                el.scaleX = el.scaleY = initScale * evt.scale;
+                el.scaleX = el.scaleY = initScale * evt.zoom;
             },
             pressMove: function (evt) {
                 el.translateX += evt.deltaX;
