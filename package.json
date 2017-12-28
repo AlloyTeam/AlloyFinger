@@ -1,6 +1,6 @@
 {
   "name": "alloyfinger",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "super tiny size multi-touch gestures library for the web. ",
   "main": "alloy_finger.js",
   "directories": {
