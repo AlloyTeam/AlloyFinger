@@ -221,17 +221,17 @@
                 (this.y2 && Math.abs(this.y1 - this.y2) > 30)) {
                 evt.direction = this._swipeDirection(this.x1, this.x2, this.y1, this.y2);
                 this.swipeTimeout = setTimeout(function () {
-                    self.swipe.dispatch(evt, this.element);
+                    self.swipe.dispatch(evt, self.element);
 
                 }, 0)
             } else {
                 this.tapTimeout = setTimeout(function () {
                     if(!self._preventTap){
-                        self.tap.dispatch(evt, this.element);
+                        self.tap.dispatch(evt, self.element);
                     }
                     // trigger double tap immediately
                     if (self.isDoubleTap) {
-                        self.doubleTap.dispatch(evt, this.element);
+                        self.doubleTap.dispatch(evt, self.element);
                         clearTimeout(self.singleTapTimeout);
                         self.isDoubleTap = false;
                     }
@@ -239,7 +239,7 @@
 
                 if (!self.isDoubleTap) {
                     self.singleTapTimeout = setTimeout(function () {
-                        self.singleTap.dispatch(evt, this.element);
+                        self.singleTap.dispatch(evt, self.element);
                     }, 250);
                 }
             }
