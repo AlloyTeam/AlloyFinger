@@ -18,7 +18,7 @@ npm install alloyfinger
 
 ### Omi Version:
 
-* [omi-finger](https://github.com/AlloyTeam/omix/tree/master/plugins/omi-finger)
+* [omi-finger](https://github.com/AlloyTeam/omi/tree/master/plugins/omi-finger)
 
 ```js
     render() {
