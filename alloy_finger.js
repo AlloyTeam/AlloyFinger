@@ -102,7 +102,6 @@
         this.touchCancel = wrapFunc(this.element, option.touchCancel || noop);
 
         this._cancelAllHandler = this.cancelAll.bind(this);
-        window.removeEventListener('scroll', this._cancelAllHandler);
 
         window.addEventListener('scroll', this._cancelAllHandler);
 
@@ -314,6 +313,7 @@
 
             this.preV = this.pinchStartLen = this.zoom = this.isDoubleTap = this.delta = this.last = this.now = this.tapTimeout = this.singleTapTimeout = this.longTapTimeout = this.swipeTimeout = this.x1 = this.x2 = this.y1 = this.y2 = this.preTapPosition = this.rotate = this.touchStart = this.multipointStart = this.multipointEnd = this.pinch = this.swipe = this.tap = this.doubleTap = this.longTap = this.singleTap = this.pressMove = this.touchMove = this.touchEnd = this.touchCancel = this.twoFingerPressMove = null;
 
+            window.removeEventListener('scroll', this._cancelAllHandler);
             return null;
         }
     };
