@@ -233,7 +233,6 @@
                     // trigger double tap immediately
                     if (self.isDoubleTap) {
                         self.doubleTap.dispatch(evt, self.element);
-                        clearTimeout(self.singleTapTimeout);
                         self.isDoubleTap = false;
                     }
                 }, 0)
