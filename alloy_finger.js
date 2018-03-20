@@ -188,6 +188,15 @@
                     evt.deltaX = currentX - this.x2;
                     evt.deltaY = currentY - this.y2;
 
+                    //move事件中添加对当前触摸点到初始触摸点的判断，
+                    //如果曾经大于过某个距离(比如10),就认为是移动到某个地方又移回来，应该不再触发tap事件才对。
+                    let movedX = Math.abs(this.x1 - this.x2),
+                        movedY = Math.abs(this.y1 - this.y2);
+
+                    if(movedX > 10 || movedY > 10){
+                        this._preventTap = true;
+                    }
+
                 } else {
                     evt.deltaX = 0;
                     evt.deltaY = 0;
