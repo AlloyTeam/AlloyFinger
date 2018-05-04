@@ -1,6 +1,8 @@
 # Preview
 
-You can touch this → [http://alloyteam.github.io/AlloyFinger/]([http://alloyteam.github.io/AlloyFinger/)
+You can touch this →
+
+[http://alloyteam.github.io/AlloyFinger/]([http://alloyteam.github.io/AlloyFinger/)
 
 # Install
 
