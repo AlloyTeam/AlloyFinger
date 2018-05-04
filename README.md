@@ -20,17 +20,6 @@ npm install alloyfinger
 
 * [omi-finger](https://github.com/AlloyTeam/omi/tree/master/plugins/omi-finger)
 
-```js
-    render() {
-        return  `
-        <div>
-            <div omi-finger ref="touchArea" onTap={this.handleTap}  onSwipe={this.handleSwipe} >
-                Tap or Swipe Me!
-            </div>
-        </div>
-        `;
-    }
-```
 
 ### Pure JS:
 ```js
