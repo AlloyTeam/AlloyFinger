@@ -78,6 +78,7 @@ export default class AlloyFinger extends Component {
     }
 
     _handleTouchStart (evt) {
+        this._emitEvent('onTouchStart', evt);
         if (!evt.touches) return;
         this.now = Date.now();
         this.x1 = evt.touches[0].pageX;
@@ -113,6 +114,7 @@ export default class AlloyFinger extends Component {
     }
 
     _handleTouchMove(evt) {
+        this._emitEvent('onTouchMove', evt);
         var preV = this.preV,
             len = evt.touches.length,
             currentX = evt.touches[0].pageX,
@@ -127,7 +129,7 @@ export default class AlloyFinger extends Component {
                         x: (evt.touches[1].pageX + currentX) / 2,
                         y: (evt.touches[1].pageY + currentY) / 2
                     };
-                    evt.scale = this.getLen(v) / this.pinchStartLen;
+                    evt.scale = evt.zoom = this.getLen(v) / this.pinchStartLen;
                     this._emitEvent('onPinch', evt);
                 }
                 evt.angle = this.getRotateAngle(v, preV);
@@ -156,6 +158,7 @@ export default class AlloyFinger extends Component {
     }
 
     _handleTouchCancel() {
+        this._emitEvent('onTouchCancel', evt);
         clearInterval(this.singleTapTimeout);
         clearInterval(this.tapTimeout);
         clearInterval(this.longTapTimeout);
@@ -163,6 +166,7 @@ export default class AlloyFinger extends Component {
     }
 
     _handleTouchEnd(evt) {
+        this._emitEvent('onTouchEnd', evt);
         this.end = Date.now();
         this._cancelLongTap();
 
