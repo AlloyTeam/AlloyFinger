@@ -126,7 +126,7 @@
             this.touchStart.dispatch(evt, this.element);
             if (this.preTapPosition.x !== null) {
                 this.isDoubleTap = (this.delta > 0 && this.delta <= 250 && Math.abs(this.preTapPosition.x - this.x1) < 30 && Math.abs(this.preTapPosition.y - this.y1) < 30);
-                if (this.isDoubleTap) clearTimeout(self.singleTapTimeout);
+                if (this.isDoubleTap) clearTimeout(this.singleTapTimeout);
             }
             this.preTapPosition.x = this.x1;
             this.preTapPosition.y = this.y1;
