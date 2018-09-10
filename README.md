@@ -12,16 +12,6 @@ npm install alloyfinger
 
 # Usage
 
-### AlloyCrop
-
-* [https://github.com/AlloyTeam/AlloyCrop](https://github.com/AlloyTeam/AlloyCrop)
-
-### Omi Version:
-
-* [omi-finger](https://github.com/Tencent/omi/tree/master/plugins/omi-finger)
-
-
-### Pure JS:
 ```js
 var af = new AlloyFinger(element, {
     touchStart: function () { },
@@ -90,10 +80,11 @@ render() {
 }
 ```
 
-# Thanks and Donate
+# Dep and other
 
 * [transformjs](http://alloyteam.github.io/AlloyTouch/transformjs/)
-* [Donate to AlloyFinger](http://alloyteam.github.io/donate.html)
+* [AlloyCrop](https://github.com/AlloyTeam/AlloyCrop)
+* [omi-finger](https://github.com/Tencent/omi/tree/master/plugins/omi-finger)
 
 # License
 This content is released under the [MIT](http://opensource.org/licenses/MIT) License.
