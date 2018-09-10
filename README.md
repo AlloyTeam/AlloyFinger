@@ -80,7 +80,7 @@ render() {
 }
 ```
 
-# Dep and other
+# Others
 
 * [transformjs](http://alloyteam.github.io/AlloyTouch/transformjs/)
 * [AlloyCrop](https://github.com/AlloyTeam/AlloyCrop)
