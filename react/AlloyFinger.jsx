@@ -157,7 +157,7 @@ export default class AlloyFinger extends Component {
         }
     }
 
-    _handleTouchCancel() {
+    _handleTouchCancel(evt) {
         this._emitEvent('onTouchCancel', evt);
         clearInterval(this.singleTapTimeout);
         clearInterval(this.tapTimeout);
