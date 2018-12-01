@@ -55,36 +55,64 @@ af.off('tap', onTap);
 af = af.destroy();
 ```
 
-### React Version:
+### Omi Version:
+
 
 ```js
-import AlloyFinger from 'alloyfinger/dist/react/AlloyFinger';
+import { render, tag, WeElement } from 'omi'
+import 'omi-finger'
 
-// ...
+@tag('my-app')
+class MyApp extends WeElement {
+  install() {
+    this.data.wording = 'Tap or Swipe Me!'
+  }
 
-render() {
+  handleTap = (evt) => {
+    this.data.wording += '\r\nTap'
+    this.update()
+  }
+
+  handleSwipe = (evt) => {
+    this.data.wording += '\r\nSwipe-' + evt.direction
+    this.update()
+  }
+
+  render() {
     return (
-        <AlloyFinger
-            onTap={this.onTap.bind(this)}
-            onMultipointStart={this.onMultipointStart.bind(this)}
-            onLongTap={this.onLongTap.bind(this)}
-            onSwipe={this.onSwipe.bind(this)}
-            onPinch={this.onPinch.bind(this)}
-            onRotate={this.onRotate.bind(this)}
-            onPressMove={this.onPressMove.bind(this)}
-            onMultipointEnd={this.onMultipointEnd.bind(this)}
-            onDoubleTap={this.onDoubleTap.bind(this)}>
-            <div className="test">the element that you want to bind event</div>
-        </AlloyFinger>
-    );
+      <div>
+        <omi-finger onTap={this.handleTap} abc={{a:1}} onSwipe={this.handleSwipe}>
+          <div class="touchArea" >
+            {this.data.wording}
+          </div>
+        </omi-finger>
+      </div>
+    )
+  }
+
+  css() {
+    return `.touchArea{
+                  background-color: green;
+                  width: 200px;
+                  min-height: 200px;
+                  text-align: center;
+                  color:white;
+                  height:auto;
+                  white-space: pre-line;
+              }`
+  }
 }
+
+render(<my-app></my-app>, 'body')
 ```
+
+* [omi-finger](https://github.com/Tencent/omi/tree/master/packages/omi-finger)
+* [css3transform](https://github.com/Tencent/omi/tree/master/packages/omi-transform)
 
 # Others
 
-* [transformjs](http://alloyteam.github.io/AlloyTouch/transformjs/)
 * [AlloyCrop](https://github.com/AlloyTeam/AlloyCrop)
-* [omi-finger](https://github.com/Tencent/omi/tree/master/plugins/omi-finger)
+
 
 # License
 This content is released under the [MIT](http://opensource.org/licenses/MIT) License.
